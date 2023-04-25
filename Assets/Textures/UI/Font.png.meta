@@ -1735,7 +1735,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      font_30: -911544643
+      font_19: -1074093321
       font_12: 2140054513
       font_57: 1899076159
       font_72: -296944620
@@ -1808,8 +1808,8 @@ TextureImporter:
       font_24: -1765819849
       font_6: -546026986
       white_panel: -456983354
-      font_19: -1074093321
       font_56: -1644382071
+      font_30: -911544643
       font_34: 970705595
   spritePackingTag: 
   pSDRemoveMatte: 0

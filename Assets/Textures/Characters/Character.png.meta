@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_0
+      name: player_idle
       rect:
         serializedVersion: 2
         x: 1
@@ -150,7 +150,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_1
+      name: walk_down_01
       rect:
         serializedVersion: 2
         x: 17
@@ -171,7 +171,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_2
+      name: walk_down_02
       rect:
         serializedVersion: 2
         x: 33
@@ -192,7 +192,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_3
+      name: walk_down_03
       rect:
         serializedVersion: 2
         x: 49
@@ -297,7 +297,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_8
+      name: walk_right_01
       rect:
         serializedVersion: 2
         x: 2
@@ -318,7 +318,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_9
+      name: walk_right_02
       rect:
         serializedVersion: 2
         x: 18
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_10
+      name: walk_right_03
       rect:
         serializedVersion: 2
         x: 34
@@ -360,7 +360,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_11
+      name: walk_right_04
       rect:
         serializedVersion: 2
         x: 50
@@ -528,7 +528,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_19
+      name: walk_up_01
       rect:
         serializedVersion: 2
         x: 0
@@ -549,7 +549,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_20
+      name: walk_up_02
       rect:
         serializedVersion: 2
         x: 16
@@ -570,7 +570,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_21
+      name: walk_up_03
       rect:
         serializedVersion: 2
         x: 32
@@ -591,7 +591,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_22
+      name: walk_up_04
       rect:
         serializedVersion: 2
         x: 48
@@ -696,7 +696,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_27
+      name: walk_left_01
       rect:
         serializedVersion: 2
         x: 1
@@ -717,7 +717,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_28
+      name: walk_left_02
       rect:
         serializedVersion: 2
         x: 17
@@ -738,7 +738,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_29
+      name: walk_left_03
       rect:
         serializedVersion: 2
         x: 33
@@ -759,7 +759,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_30
+      name: walk_left_04
       rect:
         serializedVersion: 2
         x: 49
@@ -1357,64 +1357,64 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character_2: 964336456
-      character_20: 2103710386
       character_31: -643304892
       character_18: -1537603383
       character_38: -2028944874
+      player_idle: 1621508272
+      walk_up_01: -2136465762
       character_26: 1846661247
-      character_10: 117071815
       character_51: -687275964
       character_6_a: -1864679200
-      character_19: -2136465762
       character_6_b: 532096701
       character_12: 350366194
       character_16: 612477433
-      character_28: -495461657
       character_37: 605354569
-      character_27: 1347852978
+      walk_left_02: -495461657
       character_23: -1997449330
       character_35: -2071117018
       character_24: 2061596092
+      walk_right_03: 117071815
+      walk_left_01: 1347852978
       character_46: -294843608
       character_13: -48817203
       character_6_d: -1507538975
-      character_3: -572118511
+      walk_down_02: 964336456
       character_52: 1926978732
-      character_29: -1195659014
+      walk_down_01: -1971643670
       character_4: -1882079481
-      character_8: 1159814487
       Character_0: 860602620
       character_7: -1771982725
       character_25: 1390611957
       character_41: 378686814
+      walk_right_04: -478630770
       character_48: -98801133
+      walk_left_04: -164610503
       character_33: 470660332
       character_49: -274092702
-      character_30: -164610503
-      character_21: 187819823
-      character_11: -478630770
+      walk_right_02: -1040400000
       character_40: 410372270
+      walk_up_04: -608967323
       character_15: -1798844005
       character_53: 1214416398
-      character_1: -1971643670
+      walk_right_01: 1159814487
+      walk_down_03: -572118511
       character_5: -1776957263
       character_14: 866568612
       character_47: 238776108
       character_6_c: -1573197057
+      walk_up_03: 187819823
       character_32: 209291953
       character_50: -1470744381
-      character_0: 1621508272
-      character_9: -1040400000
-      character_22: -608967323
-      character_42: -1086970374
+      walk_up_02: 2103710386
       character_34: 1308879718
+      character_42: -1086970374
+      character_36: 2030531102
       character_39: 444214708
       character_45: -1819488721
-      character_36: 2030531102
       character_17: -79909011
       character_44: -644698176
       character_43: 1423467995
+      walk_left_03: -1195659014
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

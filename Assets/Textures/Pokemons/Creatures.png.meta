@@ -1,0 +1,4283 @@
+fileFormatVersion: 2
+guid: 7070ee69534624e7c97d2c0bcffa262d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Creatures_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 665
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edba7ce24388a4fbd80c5ae31de71542
+      internalID: 473168842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 665
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f37076faa2ae4a979d3b3a689e86f12
+      internalID: -1440064400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 665
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859f64a11e76944999b936b31a7a774e
+      internalID: 397663885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_3
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 665
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df58b50a8e5248838db85947e24edb1
+      internalID: 1938554933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_4
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 665
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1c02bfb8e1a4249b539ac8f4a26185
+      internalID: 252625523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_5
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 665
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a9930a302b347728681d9e178ccc0b
+      internalID: 1591934148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_6
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 665
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11022b7ba6df4e63aeb0d6d1b8173eb
+      internalID: -1333553266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_7
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 665
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9b0446bb3c64b8489606428c0a2cd7
+      internalID: -1407999352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_8
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 657
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f1ec1a34caf446994d76edfb6ff129
+      internalID: 1943331950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_9
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 657
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32fa04c5399274476bb10b97dea2ccaa
+      internalID: 464837927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_10
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 657
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d064e08adb20949f2bacca1880dacadc
+      internalID: 119143350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_11
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 657
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d0cc3a7f3f4497d8a4048a5cf3975e
+      internalID: 368238411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_12
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 640
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf1f5fc9a78d441291944485e839d27
+      internalID: 721133647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 649
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96a039479cce401dbc5e25fd21a7300
+      internalID: -1428160607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_14
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 640
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da14d1b2feba44979a63cb63898ef83c
+      internalID: -164403965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_15
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 640
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686bef85044594d16b0371dc92e44580
+      internalID: -1309561431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_16
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 640
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0601c9cc572495ab4714c516dc8e6b
+      internalID: 1629787537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_17
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 640
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f70a01047e7f4e59a2c5eb6e5d5887d
+      internalID: -52150068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_18
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 640
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aef1bdba6cca4a85b71e4e5b25e995d
+      internalID: 1291111626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_19
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 641
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2c843bf01a74e7696a6863e7265c9f
+      internalID: -1701107253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_20
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 640
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf560c7ffd9f45ca9f4456903dbbfda
+      internalID: 527577420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_21
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 640
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e703ef76665f45a78eb5af023fb5496
+      internalID: -62830629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_22
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 640
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 783a8d2685668477e8a98a59d046f24e
+      internalID: 1895861144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_23
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 608
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2999b000bcb604897978c30366f2d1c6
+      internalID: -737432428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_24
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 608
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6811aa3cad306464eb64363c907d44a3
+      internalID: 1486701435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_25
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 624
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafeab7fc346247f4a217897e052107b
+      internalID: -1838690977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_26
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 608
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c06b1d852f3452481b42b6c02d48e8
+      internalID: -49925853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_27
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 609
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fdfe22e234d1435d8da96da041cc867
+      internalID: -23464227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_28
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 608
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3284b576c7a640a3b6c1f89914eb9b4
+      internalID: -1964600018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_29
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 608
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d3be471e9d2458f907588c6583c2c5
+      internalID: 1390287952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_30
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 601
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed12e037699b49ec881d241d2ebdbef
+      internalID: 900415515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_31
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 601
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd355d7d8076c4a1b867b54489a3024c
+      internalID: -631858741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_32
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 601
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12b1fb6cbae64b20a66109b36ee1655
+      internalID: 1613476701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_33
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 601
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055a3d56f90a84c6e864922c37fab19e
+      internalID: -328955878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_34
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 581
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf621d22d63543a5a36bf9d139b8366
+      internalID: 1770872060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_35
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 582
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e559c4a11804a3b8f9ffef7272de6b
+      internalID: -1517452472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_36
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 583
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de62171956324f1184f27ef29465732
+      internalID: 1274499382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_37
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 576
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b9c1c413eba4f148ac8eec29bb5625
+      internalID: -1393821146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_38
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 591
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a388225e0ae44a4a4c48e17c5792ea
+      internalID: -1871120672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_39
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 590
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572311f1a3a2b4e82a62994175ca1685
+      internalID: -1156703522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_40
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 576
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55489de4096134e3f947edf005003814
+      internalID: 735748218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_41
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 593
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3bee6301cae4a44a3f7254bdf2dcec
+      internalID: 1849146629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_42
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 593
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805fc69c3a3d341bbb127206516a5414
+      internalID: -1926785295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_43
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 593
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0769e4b777b3548b985a61b2569de642
+      internalID: 2037133711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_44
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 593
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a2dfbdbe4ca4fb88ee43ef58208b5e
+      internalID: -203532478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_45
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 583
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e7407c6be2143889e76ac03007e7fa
+      internalID: 544989754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_46
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 581
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bdd6b77b3d140528a6dd2a486b5e6d
+      internalID: 660638521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_47
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 582
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a4cb40effab40cbac111ac828fa403
+      internalID: 487126819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_48
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 576
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b377b140886234aff9869cce2a6c843f
+      internalID: -1958930906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_49
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 576
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e29d834a84ba42d1a4b2df5e1c079a3
+      internalID: 1762579193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_50
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 576
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b016c0c779374c9eb0753dd53b46460
+      internalID: 931103930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_51
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 576
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70601761bd0d84fe9ab44f9b16307be6
+      internalID: -117518732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_52
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 585
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0346c5769b64c76ac1c59b131fbc5e
+      internalID: -112087027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_53
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 585
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5584033eb19f74d88bed9040dce3adf8
+      internalID: -1680727425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_54
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 585
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc27a2b544d64b849d5fe5f0e14552c
+      internalID: -825654253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_55
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 585
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd569b138882e4cd39307ba08763734e
+      internalID: -252509024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_56
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 544
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e5581c95fe944f6a2fb26cebaef58d
+      internalID: 1472068551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_57
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 544
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c10dd109dd742e49b79cdced571291
+      internalID: 1964375445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_58
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 544
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea5aba8e9722403ba920d54ba4e8000
+      internalID: -1593110182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_59
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 544
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4b6c15134634c4c89c5edb3a26ed84
+      internalID: 509353257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_60
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 544
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a44f7b3cce204675abe3dfe6b093e01
+      internalID: 356313167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_61
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 537
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fccd482ac99b4dc4b994968d771b2f3
+      internalID: 1584134488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_62
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 537
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850842baa8fe84e28ae28d81cdd83406
+      internalID: 1858258854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_63
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 537
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5a131000ada4a49817fc84f02abb35
+      internalID: -1152108504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_64
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 537
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ede539e843a44c569c8b891aa03e779
+      internalID: -530964421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_65
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 512
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adbf1be798a404a4a9faf27b4fbd2d3b
+      internalID: 115608181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_66
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 512
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10196b2b350e4dc39a6c3445cb1d594
+      internalID: 911086557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_67
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 529
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e77859987a64596ac588c7b0e2f430
+      internalID: 633500795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_68
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 529
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c071674d386490f961df9b8aac25a4
+      internalID: -696919713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_69
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 529
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ce4cd90255b4168ba92a8ebcb1ea48
+      internalID: 1010632537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_70
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 529
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54cbbd87940ab49e09f08226ceb79a31
+      internalID: -941532108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_71
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 512
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639a0c7f30cce4c7a979c9d97c1612dd
+      internalID: 202473696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_72
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 512
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3755929698f30477fa76d6a470866c79
+      internalID: -91817902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_73
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 512
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e86ad60d86214d4db6c2f4c2e5fa1f0
+      internalID: -1805927610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_74
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 512
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4538843dc8bd349fcabf834fd8acf8e7
+      internalID: 878166329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_75
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 521
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ea29f2698874bcb8e1d84d28084c63
+      internalID: 1869271099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_76
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 521
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55fbb18a7473d4815811e75dbaebbc98
+      internalID: -1894907020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_77
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 521
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026a0173f7c3d411382f52f64fac7eb9
+      internalID: 1169091812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_78
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 512
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2936919e2def4e89b86000358512c98
+      internalID: -912347598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_79
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 512
+        width: 29
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e4ec60505d04a7fb99fd0653112677
+      internalID: -1200005849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_80
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 512
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad41fd21b3574e0d95f2e14a14c6135
+      internalID: 1452450523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_81
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 512
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148b908684ecd41b0b24c9a6a2abd6a8
+      internalID: 2137406871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_82
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 512
+        width: 29
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c930e76a20ad7490faa70a3b97f3193d
+      internalID: -1154767716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_83
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 512
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de45c85118ca4c7aa60e68615a26678
+      internalID: 1918343202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_84
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 512
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3520cc7cd99d542abbeab6f63b4b1b1b
+      internalID: 1935413238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_85
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 513
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2c38d89b4a04663bc739c5a6df10f3
+      internalID: 1268502910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_86
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 480
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22320755219445919493719e6393b05
+      internalID: 1560955308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_87
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 482
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20b0d9c98eb84e3f98fe39f9e4f5449
+      internalID: -1128321222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_88
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 485
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c54ed53b669499fb3b43e6f246a1b8
+      internalID: 976707042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_89
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 496
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e768e77ea1674c98adf596ac94e760d
+      internalID: 344812046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_90
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 496
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ada531a900d6470fb0c7d1745be53ca
+      internalID: 1889437302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_91
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 480
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1ae0aa6c2ec4f5bbc46c859020819f
+      internalID: -375135291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_92
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 480
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca59d01d44934140b988f874b3935d8
+      internalID: 1839985897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_93
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 480
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7260529a8884c7a8f84d0b5b010e8b
+      internalID: 1685464938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_94
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 480
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500f7422b22974b989f175a6e4c2c9a5
+      internalID: 678767996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_95
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 480
+        width: 29
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c413130250f486bb146b60a9de3318
+      internalID: -1584223694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_96
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 480
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c274c248997d64d77b0bfa0f0a84fa1a
+      internalID: 1237858558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_97
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 480
+        width: 30
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40673184c50734d5795d26beed6716ce
+      internalID: -1926160627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_98
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 480
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f831c771c0814c16856460873b9ea7a
+      internalID: 1611389890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_99
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 480
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ce7088f5c584b8087bb728b1f0d928
+      internalID: -378304275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_100
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 480
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131b10baf557a4fd4aefbfe18a0cd729
+      internalID: 1610225582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_101
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 480
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85c71057ef7640789ddff6bbd85487f
+      internalID: -1549008377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_102
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 480
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee804216c5af481aa731ac4044e739c
+      internalID: 2083605717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_103
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 451
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0fc4a01c15744e098b6dbcf8d2495ba
+      internalID: 358959562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_104
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 452
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dfacd21f8b984403b7179dbfd196369
+      internalID: -1711935115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_105
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 455
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6144b2fa2154d6f84562cf99446f30
+      internalID: 1570537603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_106
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 441
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477b1945850264e34ac1bf80fd5ee44a
+      internalID: 15518423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_107
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 441
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c8142eaac614a6d8ca6ce551d060db
+      internalID: -1307821189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_108
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 441
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb9dc71d8e1c48b388c8cdb33d1a7f8
+      internalID: 24056255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_109
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 441
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9624e1d14c049698c2474b0611cf5f
+      internalID: 431482330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_110
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 419
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6976d58cfadb40c7bc7e62c9693a0d4
+      internalID: 1678334740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_111
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 416
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2c6444c493b4de1a3382172efedba1
+      internalID: -947076920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_112
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 433
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b138dd2518348ae8810f0ac8a01848
+      internalID: 239082507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_113
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 433
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00baad1d0ab6348ac89dc5fa371dee24
+      internalID: 1213295311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_114
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 433
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af853d06c09d0415fb19b95886b4814f
+      internalID: -518182739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_115
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 416
+        width: 35
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fa70e7aeb544dcd9be7262af2f0267
+      internalID: 1932426832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_116
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 416
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86338a1d85d9d4c63843802715f77ee8
+      internalID: -1443260698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_117
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 420
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2078dcbd7df204ac188673ec976e01e2
+      internalID: 1593666865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_118
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 416
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93bf374bade7e41d9b5aadccb8698c55
+      internalID: 634214537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_119
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 416
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49656ebe16454ec4b25ddb12c6c8d73
+      internalID: 135314004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_120
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 416
+        width: 35
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024ebe81ca60e4fba80da3f42e7c4ba5
+      internalID: -1425477380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_121
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 384
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b227724975f14b16b3bcb4e33c03e0e
+      internalID: 819065535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_122
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 384
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2cbbf66a9a9c4f3f88b9bb6c7567bcc
+      internalID: 197623441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_123
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 384
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887afc44fdc6c4ab6afb7564d12e65c1
+      internalID: -1094489452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_124
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 384
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d98d380c8fea4c0292f4b81eb03b152
+      internalID: 1022254566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_125
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 384
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51108ce52f0654132a56734e330fe98c
+      internalID: -2054060974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_126
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 384
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bfc6269818af4245ad4f18dc53effe3
+      internalID: -1217664714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_127
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 384
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b420e53078d44260b7da6c6068b60fe
+      internalID: 299333689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_128
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 384
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afcbc1280c6d5490f8d10c466843fa49
+      internalID: 1260406663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_129
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 384
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a49d65177574453fb67961f95efbf05
+      internalID: -289276966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_130
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 384
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1726130c55ee74a1c86e2cbcb5e54e8b
+      internalID: 226140079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_131
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 384
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0583c4943f7504202a561dee78a95649
+      internalID: -86940826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_132
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 400
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed0ebef440014e01a2a3187cad7e022
+      internalID: -510799069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_133
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 400
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a8f2cf5050b4a0a9c41e3ef917e7bb
+      internalID: 211616655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_134
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 384
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d40bfcd7de7249ec9e3e3fe433b3043
+      internalID: 736488970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_135
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 384
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6220f54a925f4a899b6f09e0487d963
+      internalID: -865116917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_136
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 384
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05e87200acd840ef884b4d8a3fea6f1
+      internalID: -894230648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_137
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 352
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afce44c6b4abe4f4f9b8d3e5997cf320
+      internalID: -1281437717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_138
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 352
+        width: 39
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf55138442184ad1b7e374535827b91
+      internalID: -768094602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_139
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 352
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f96d4e3675d42c6a0b28c07ba663df
+      internalID: -2095035076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_140
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 352
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f8507b71c174557816fc94e6dea59e
+      internalID: -150269400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_141
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 352
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5616a92b934b24763b3c69ffb97ac843
+      internalID: -1818817644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_142
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 319
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9285f44955b0149d0877674f3215261a
+      internalID: 1344236643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_143
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 319
+        width: 43
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166a666d585874058ab5f9df636f0232
+      internalID: 221807062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_144
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 319
+        width: 37
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644542f70fe47438ab50e2a710a32496
+      internalID: -729601235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_145
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 319
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7706d3dbf1f4af19861548286ba44c
+      internalID: -1535381993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_146
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 319
+        width: 26
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9830581c68c43e7b39ab3b4b1edc15
+      internalID: 993126953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_147
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 319
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28c634b1795d45be8ad1772e40face1
+      internalID: 1252191167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_148
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 319
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efe90739a0fd453c967221548c83f82
+      internalID: -832563399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_149
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 319
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc82e57eeaef740249d373a2c9c30950
+      internalID: -1934221094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_150
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 319
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f39ec4b0f8144601a75132cf5b91510
+      internalID: -1538589942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_151
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 319
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b77b700fa4274536a2e253951f5018e
+      internalID: -1174219661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_152
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 319
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763a55320e4074f03b04c4819df8917e
+      internalID: 1679501925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_153
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 319
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28b00948b69d4c9faa7a09283786479
+      internalID: -50655779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_154
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 313
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a22401b642f41608413560ed187b52
+      internalID: 1599632070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_155
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 313
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e05228470b145ab808d47947811643
+      internalID: 919340368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_156
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 313
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc8b002f0e0341bc8dfd5b5d12ef550
+      internalID: 1932631688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_157
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 313
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f489dd51e234cbd82034c620266fcd
+      internalID: 1077704472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_158
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 305
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84dee7fb53d324e36a8eac3f54849f55
+      internalID: -135852650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_159
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 305
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbafee3a8da3344db8c84eb1b6d49ff9
+      internalID: -129218971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_160
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 305
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f6a200573dd4277bc1a9c36463d897
+      internalID: 1144704268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_161
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 305
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe136fd1420a84ac6857d4b70ca806ba
+      internalID: 708610425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_162
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 288
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1266550b5867c44418a803c9d1e9c3c5
+      internalID: 593817832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_163
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 288
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6b8a737628e4b0e93d783cff53b5d5
+      internalID: 1116442364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_164
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 288
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e834e732f59294c9f97ccf34b3958ce5
+      internalID: 798097657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_165
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 288
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6147193a72344b8882ac87570fd178
+      internalID: -1744894497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_166
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 288
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54c1293006a94236849fe3bd107e95d
+      internalID: 947008737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_167
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 288
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d337a972275643bd86ad7d7a53961d7
+      internalID: 995539913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_168
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 288
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ecf112b748614cf4b0e998747412203
+      internalID: 1125255530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_169
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 256
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35414371aacf44a11aa2678f047a7fee
+      internalID: 1539684664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_170
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 256
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47dffe263ba1c4d149ae8a99d345d7e0
+      internalID: 2003234510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_171
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 256
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f0e7588190646e4bf9a0b4d4413f17
+      internalID: 800174689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_172
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 256
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7222433a77849dc8ca2c7438b45c0e
+      internalID: 774021690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_173
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 256
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e738b116e474add9e8ccd2f2deb5ab
+      internalID: -360312171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_174
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 224
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56abe6129cc564109b85cd5616097c68
+      internalID: -461177636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_175
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 224
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553ea5c1bdddf4572ac99b45e5467920
+      internalID: 253443070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_176
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 224
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1c826d2e7c34b25a7249e92168088b
+      internalID: 1069371932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_177
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 224
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db17da579d4f742b8917ea8a0c23db38
+      internalID: 1308292280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_178
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 192
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3b450f164674a8998331f5b799ac0b
+      internalID: -235647978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_179
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 192
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cedc06ee4873349d3a41746ff5733206
+      internalID: -458813536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_180
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 192
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8060221db87884d0f9b187fb05c0913a
+      internalID: -695334424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_181
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 162
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05556d5ea3d12490d97cc2906094e987
+      internalID: -1228435659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_182
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 161
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ea03488c8834993b29f1f7b0188f53
+      internalID: -653811145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_183
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 131
+        width: 46
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1878fd6c96b8f49d6994dc04dba73508
+      internalID: 1234456871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_184
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 130
+        width: 44
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44818df47eaf347b99f0fe25cdec1e9d
+      internalID: 1458707786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_185
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 129
+        width: 36
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c1bbc14390b149409ebc67dec2183f8
+      internalID: 10469531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_186
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 96
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa8e73a8fdc44dc0a2434b2edad268c
+      internalID: -1678077109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creatures_187
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 96
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cab4180aac7649de9120d1911284e97
+      internalID: -1205659833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Creatures_126: -1217664714
+      Creatures_121: 819065535
+      Creatures_172: 774021690
+      Creatures_34: 1770872060
+      Creatures_136: -894230648
+      Creatures_62: 1858258854
+      Creatures_16: 1629787537
+      Creatures_38: -1871120672
+      Creatures_164: 798097657
+      Creatures_69: 1010632537
+      Creatures_154: 1599632070
+      Creatures_125: -2054060974
+      Creatures_67: 633500795
+      Creatures_151: -1174219661
+      Creatures_91: -375135291
+      Creatures_106: 15518423
+      Creatures_51: -117518732
+      Creatures_20: 527577420
+      Creatures_46: 660638521
+      Creatures_132: -510799069
+      Creatures_177: 1308292280
+      Creatures_145: -1535381993
+      Creatures_9: 464837927
+      Creatures_182: -653811145
+      Creatures_174: -461177636
+      Creatures_116: -1443260698
+      Creatures_142: 1344236643
+      Creatures_118: 634214537
+      Creatures_89: 344812046
+      Creatures_83: 1918343202
+      Creatures_95: -1584223694
+      Creatures_167: 995539913
+      Creatures_117: 1593666865
+      Creatures_0: 473168842
+      Creatures_115: 1932426832
+      Creatures_109: 431482330
+      Creatures_93: 1685464938
+      Creatures_39: -1156703522
+      Creatures_86: 1560955308
+      Creatures_50: 931103930
+      Creatures_58: -1593110182
+      Creatures_104: -1711935115
+      Creatures_150: -1538589942
+      Creatures_134: 736488970
+      Creatures_92: 1839985897
+      Creatures_103: 358959562
+      Creatures_131: -86940826
+      Creatures_140: -150269400
+      Creatures_171: 800174689
+      Creatures_157: 1077704472
+      Creatures_108: 24056255
+      Creatures_146: 993126953
+      Creatures_19: -1701107253
+      Creatures_168: 1125255530
+      Creatures_35: -1517452472
+      Creatures_90: 1889437302
+      Creatures_162: 593817832
+      Creatures_135: -865116917
+      Creatures_105: 1570537603
+      Creatures_139: -2095035076
+      Creatures_64: -530964421
+      Creatures_152: 1679501925
+      Creatures_42: -1926785295
+      Creatures_65: 115608181
+      Creatures_13: -1428160607
+      Creatures_148: -832563399
+      Creatures_184: 1458707786
+      Creatures_61: 1584134488
+      Creatures_3: 1938554933
+      Creatures_2: 397663885
+      Creatures_32: 1613476701
+      Creatures_98: 1611389890
+      Creatures_23: -737432428
+      Creatures_78: -912347598
+      Creatures_143: 221807062
+      Creatures_1: -1440064400
+      Creatures_15: -1309561431
+      Creatures_129: -289276966
+      Creatures_41: 1849146629
+      Creatures_178: -235647978
+      Creatures_45: 544989754
+      Creatures_141: -1818817644
+      Creatures_159: -129218971
+      Creatures_30: 900415515
+      Creatures_100: 1610225582
+      Creatures_81: 2137406871
+      Creatures_77: 1169091812
+      Creatures_110: 1678334740
+      Creatures_44: -203532478
+      Creatures_88: 976707042
+      Creatures_130: 226140079
+      Creatures_60: 356313167
+      Creatures_37: -1393821146
+      Creatures_75: 1869271099
+      Creatures_113: 1213295311
+      Creatures_158: -135852650
+      Creatures_5: 1591934148
+      Creatures_63: -1152108504
+      Creatures_170: 2003234510
+      Creatures_179: -458813536
+      Creatures_114: -518182739
+      Creatures_27: -23464227
+      Creatures_101: -1549008377
+      Creatures_181: -1228435659
+      Creatures_166: 947008737
+      Creatures_107: -1307821189
+      Creatures_112: 239082507
+      Creatures_8: 1943331950
+      Creatures_10: 119143350
+      Creatures_21: -62830629
+      Creatures_122: 197623441
+      Creatures_43: 2037133711
+      Creatures_66: 911086557
+      Creatures_185: 10469531
+      Creatures_53: -1680727425
+      Creatures_99: -378304275
+      Creatures_71: 202473696
+      Creatures_14: -164403965
+      Creatures_33: -328955878
+      Creatures_4: 252625523
+      Creatures_40: 735748218
+      Creatures_25: -1838690977
+      Creatures_26: -49925853
+      Creatures_153: -50655779
+      Creatures_6: -1333553266
+      Creatures_56: 1472068551
+      Creatures_55: -252509024
+      Creatures_84: 1935413238
+      Creatures_72: -91817902
+      Creatures_180: -695334424
+      Creatures_7: -1407999352
+      Creatures_24: 1486701435
+      Creatures_59: 509353257
+      Creatures_22: 1895861144
+      Creatures_111: -947076920
+      Creatures_176: 1069371932
+      Creatures_29: 1390287952
+      Creatures_47: 487126819
+      Creatures_49: 1762579193
+      Creatures_54: -825654253
+      Creatures_87: -1128321222
+      Creatures_147: 1252191167
+      Creatures_175: 253443070
+      Creatures_18: 1291111626
+      Creatures_94: 678767996
+      Creatures_48: -1958930906
+      Creatures_161: 708610425
+      Creatures_127: 299333689
+      Creatures_11: 368238411
+      Creatures_156: 1932631688
+      Creatures_102: 2083605717
+      Creatures_128: 1260406663
+      Creatures_85: 1268502910
+      Creatures_80: 1452450523
+      Creatures_124: 1022254566
+      Creatures_12: 721133647
+      Creatures_73: -1805927610
+      Creatures_169: 1539684664
+      Creatures_123: -1094489452
+      Creatures_119: 135314004
+      Creatures_36: 1274499382
+      Creatures_70: -941532108
+      Creatures_96: 1237858558
+      Creatures_120: -1425477380
+      Creatures_186: -1678077109
+      Creatures_28: -1964600018
+      Creatures_138: -768094602
+      Creatures_183: 1234456871
+      Creatures_163: 1116442364
+      Creatures_79: -1200005849
+      Creatures_74: 878166329
+      Creatures_76: -1894907020
+      Creatures_57: 1964375445
+      Creatures_165: -1744894497
+      Creatures_133: 211616655
+      Creatures_149: -1934221094
+      Creatures_97: -1926160627
+      Creatures_187: -1205659833
+      Creatures_52: -112087027
+      Creatures_137: -1281437717
+      Creatures_31: -631858741
+      Creatures_155: 919340368
+      Creatures_160: 1144704268
+      Creatures_68: -696919713
+      Creatures_173: -360312171
+      Creatures_144: -729601235
+      Creatures_17: -52150068
+      Creatures_82: -1154767716
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

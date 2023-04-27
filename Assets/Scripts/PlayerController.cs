@@ -8,17 +8,18 @@ public class PlayerController : MonoBehaviour
     private const string VERTICAL = "Vertical";
     private const string SPEED = "Speed";
 
+    [SerializeField]
+    private float _speed = 5f; // Player movement speed
 
-    public float Speed = 5f; // Player movement speed
     private Vector2 _moveDirection; // Current movement direction of the player
+    private Rigidbody2D _rigidBody; // Player's Rigidbody2D component
 
-    private Rigidbody2D _rb; // Player's Rigidbody2D component
     private Animator _animator; // Player's Animator component
 
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _moveDirection = Vector2.zero; // Set the initial movement direction to (0, 0)
     }
@@ -38,13 +39,25 @@ public class PlayerController : MonoBehaviour
 
         //For detect if the player is moving calculate te sqrMagnitude of the movement direction
         //Use sqrMagnitude instead of magnitude because it is more efficient
-        _animator.SetFloat(SPEED, _moveDirection.sqrMagnitude);
+        float playerMoving = _moveDirection.sqrMagnitude;
+        _animator.SetFloat(SPEED, playerMoving);
+
+        CheckPokemonEncounter(playerMoving != 0);
     }
 
     void FixedUpdate()
     {
         // Move the player based on the current movement direction and speed
-        _rb.MovePosition(_rb.position + _moveDirection * Speed * Time.deltaTime);
+        _rigidBody.MovePosition(_rigidBody.position + _moveDirection * _speed * Time.deltaTime);
+    }
 
+    private void CheckPokemonEncounter(bool playerIsMoving)
+    {
+        if (playerIsMoving)
+        {
+            //Move the position of the player to down direction for check the bottom of the player sprite.
+            Vector3 playerPosition = transform.position + Vector3.down * 0.5f;
+            GameManager.Instance.PokemonSpawner.TryEncounterPokemon(playerPosition);
+        }
     }
 }

@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Get horizontal and vertical input axis values
-        float horizontalInput = Input.GetAxis(HORIZONTAL);
-        float verticalInput = Input.GetAxis(VERTICAL);
+        float horizontalInput = Input.GetAxisRaw(HORIZONTAL);
+        float verticalInput = Input.GetAxisRaw(VERTICAL);
 
         // Set the movement direction based on input axis values
         _moveDirection = new Vector2(horizontalInput, verticalInput);

@@ -7,6 +7,6 @@ public class AbilityTypes
 {
     public const string MODIFY_PLAYER_ATTACK = "Modify Player Attack";
     public const string MODIFY_PLAYER_DEFENSE = "Modify Player Defense";
-    public const string MODIFY_OPPONENT_ATTACK = "Modify Player Attack";
-    public const string MODIFY_OPPONENT_DEFENSE = "Modify Player Defense";
+    public const string MODIFY_OPPONENT_ATTACK = "Modify Opponent Attack";
+    public const string MODIFY_OPPONENT_DEFENSE = "Modify Opponent Defense";
 }

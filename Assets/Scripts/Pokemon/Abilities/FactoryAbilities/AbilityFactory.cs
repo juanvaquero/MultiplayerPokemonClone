@@ -3,32 +3,34 @@ using System.Collections.Generic;
 
 public class AbilityFactory
 {
-    private Dictionary<string, IAbilityFactory> factories = new Dictionary<string, IAbilityFactory>();
+    private Dictionary<string, IAbilityFactory> _factories;
 
     public AbilityFactory()
     {
-        RegisterFactory("Attack", new ModifyOpponentAttackFactory());
-        RegisterFactory("Defense", new ModifyOpponentDefenseFactory());
-        RegisterFactory("Attack", new ModifyPlayerAttackFactory());
-        RegisterFactory("Defense", new ModifyPlayerDefenseFactory());
+        _factories = new Dictionary<string, IAbilityFactory>();
+
+        RegisterFactory(AbilityTypes.MODIFY_OPPONENT_ATTACK, new ModifyOpponentAttackFactory());
+        RegisterFactory(AbilityTypes.MODIFY_OPPONENT_DEFENSE, new ModifyOpponentDefenseFactory());
+        RegisterFactory(AbilityTypes.MODIFY_PLAYER_ATTACK, new ModifyPlayerAttackFactory());
+        RegisterFactory(AbilityTypes.MODIFY_PLAYER_DEFENSE, new ModifyPlayerDefenseFactory());
     }
 
 
     public void RegisterFactory(string type, IAbilityFactory factory)
     {
-        factories[type] = factory;
+        _factories[type] = factory;
     }
 
     public Ability CreateAbility(PokemonDataAbility pokemonDataAbility)
     {
         IAbilityFactory factory;
-        if (factories.TryGetValue(pokemonDataAbility.AbilityType, out factory))
+        if (_factories.TryGetValue(pokemonDataAbility.AbilityType, out factory))
         {
             return factory.CreateAbility(pokemonDataAbility);
         }
         else
         {
-            throw new System.ArgumentException("Unknown ability type: " + pokemonDataAbility.AbilityType);
+            throw new System.ArgumentException("Unknown ability type: " + pokemonDataAbility.AbilityType + ", please review the abilities type class.");
         }
     }
 }

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0369986fc1ea48b4b6ea6386103d1a2, type: 3}
-  m_Name: Grizzlor 01
+  m_Name: 3
   m_EditorClassIdentifier: 
-  Name: Grizzlor
-  MaxHealth: 100
-  Attack: 15
-  Defense: 15
-  sprite: {fileID: -1443260698, guid: 7070ee69534624e7c97d2c0bcffa262d, type: 3}
+  Name: Voltotron
+  MaxHealth: 80
+  Attack: 20
+  Defense: 30
+  sprite: {fileID: -1593110182, guid: 7070ee69534624e7c97d2c0bcffa262d, type: 3}
   spriteFlipped: 0
   Movements:
-  - {fileID: 11400000, guid: 74975664b275546eebc50b74897f1751, type: 2}
+  - {fileID: 11400000, guid: 47ba1ccefa06f458ebf2a420e11860de, type: 2}
   Abilities:
-  - {fileID: 11400000, guid: f593914486afe447dbe877a26fa6227f, type: 2}
+  - {fileID: 11400000, guid: 2559abd4d51f74bc9b452929ea2ecf16, type: 2}

@@ -7,7 +7,7 @@ public class PokemonData : ScriptableObject
 
     public int MaxHealth;
     public int Attack;
-    public float Defense;
+    public int Defense;
 
     public Sprite sprite;
 

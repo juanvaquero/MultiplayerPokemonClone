@@ -11,16 +11,8 @@ public class UIMovementsPanel : MonoBehaviour
         if (movements == null || abilities == null)
             return;
 
-        int i;
-        for (i = 0; i < movements.Length; i++)
-        {
-            _movementButtons[i].Initialize(movements[i], combatManager.MovementExecuted);
-        }
-
-        for (int j = i; j < abilities.Length; j++)
-        {
-            _movementButtons[j].Initialize(abilities[j], combatManager.AbilityExecuted);
-        }
+        _movementButtons[0].Initialize(movements[0], combatManager.MovementExecuted);
+        _movementButtons[1].Initialize(abilities[0], combatManager.AbilityExecuted);
     }
 
 }

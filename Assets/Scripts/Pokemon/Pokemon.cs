@@ -9,7 +9,7 @@ public class Pokemon
 
     public int CurrentHealth;
     public int Attack;
-    public float Defense;
+    public int Defense;
 
     //Collection of movements and Abilities
     public Movement[] Movements;
@@ -63,6 +63,7 @@ public class Pokemon
 
         return abilities;
     }
+
 
     public bool IsPokemonLife()
     {

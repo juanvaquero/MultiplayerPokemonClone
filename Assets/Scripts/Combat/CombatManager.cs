@@ -51,32 +51,6 @@ public class CombatManager : MonoBehaviour
         _opponentUnit.LoadCombatUnit(pokemon, false);
     }
 
-    public void DoPlayerMovement(CombatAction movement)
-    {
-        bool opponentFainted = movement.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
-
-        HealthChanged.Invoke(_opponentUnit.Pokemon.CurrentHealth);
-
-        // Check if the defender has fainted
-        if (opponentFainted)
-        {
-            // If the defender has fainted, end the combat
-            //TODO Check it the opponent have more pokemons
-            EndCombat(_playerUnit.Pokemon);
-        }
-        else
-        {
-            // If the defender has not fainted, it becomes the other player's turn
-            playerTurn = !playerTurn;
-        }
-    }
-
-    public void DoPlayerAbility(CombatAction ability)
-    {
-        ability.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
-        //TODO check if the ability is unlocked fot enable the button
-    }
-
     public void StartWildEncounter(Pokemon wildPokemon)
     {
         SpawnOpponentPokemon(wildPokemon);
@@ -102,4 +76,42 @@ public class CombatManager : MonoBehaviour
         OnCombatEnd.Invoke();
         gameObject.SetActive(false);
     }
+
+    #region Player movement and abilities
+
+    public void DoPlayerMovement(CombatAction movement)
+    {
+        bool opponentFainted = movement.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
+
+        HealthChanged.Invoke(_opponentUnit.Pokemon.CurrentHealth);
+
+        // Check if the defender has fainted
+        if (opponentFainted)
+        {
+            // If the defender has fainted, end the combat
+            //TODO Check it the opponent have more pokemons
+            EndCombat(_playerUnit.Pokemon);
+        }
+        else
+        {
+            // If the defender has not fainted, it becomes the other player's turn
+            playerTurn = !playerTurn;
+        }
+    }
+
+    public void DoPlayerAbility(CombatAction ability)
+    {
+        Debug.LogError("Execute " + ability.Name);
+        // ability.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
+
+        // playerTurn = !playerTurn;
+        //TODO check if the ability is unlocked fot enable the button
+    }
+
+    #endregion
+
+    #region Opponent movement and abilities
+
+    #endregion
+
 }

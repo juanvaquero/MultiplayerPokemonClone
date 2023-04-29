@@ -13,18 +13,22 @@ public class Movement : CombatAction
     }
 
     /// <summary>
-    /// Use a move from the attacker to the defender, based on the stats of the pokemons.
+    /// Use a move from the attacker to the defender, based on the stats of the pokemons
     /// </summary>
     /// <param name="attacker"></param>
     /// <param name="defender"></param>
     /// <returns>True: Defender defeated. False: Defender alive.</returns>
     public override bool Execute(Pokemon attacker, Pokemon defender)
     {
+        //For simulate the critical movement
+        float modifier = Random.Range(0.8f, 1f);
+        float attackNormalized = attacker.Attack / 255f;
         // Calculate the damage the attacker's move will do to the defender
-        float damage = Power - defender.Defense;
+        float damage = attackNormalized * Power - ((float)attacker.Attack / defender.Defense) + 2;
+        Debug.LogError(damage + "damage = 1");
 
         // Apply the damage to the defender's health
-        defender.CurrentHealth -= Mathf.RoundToInt(damage);
+        defender.CurrentHealth -= Mathf.FloorToInt(damage * modifier);
 
         // Check if the defender has fainted
         if (defender.CurrentHealth <= 0)

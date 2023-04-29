@@ -21745,6 +21745,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4277435052841697050, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277435052841697050, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581944236464319219, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581944236464319219, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581944236464319219, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4866712501113622824, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
       propertyPath: m_Name
       value: Combat System
@@ -21795,6 +21815,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4866712501113622827, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513167702176057421, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513167702176057421, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822458651138858404, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822458651138858404, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822458651138858404, guid: ef78d0493cb5c487fac15498b8808181, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8123387129731533907, guid: ef78d0493cb5c487fac15498b8808181, type: 3}

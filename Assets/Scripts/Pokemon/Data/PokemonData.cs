@@ -10,8 +10,6 @@ public class PokemonData : ScriptableObject
     public float Defense;
 
     public Sprite sprite;
-    //For fix some creatures sprites start direction
-    public bool spriteFlipped = false;
 
     //Collection of movements and Abilities
     public PokemonDataMovement[] Movements;

@@ -37,4 +37,12 @@ public class GameManager : MonoBehaviour
         get { return _pokemonSpawner; }
     }
 
+    [SerializeField]
+    private CombatManager _combatManager;
+    public CombatManager CombatManager
+    {
+        get { return _combatManager; }
+    }
+
+
 }

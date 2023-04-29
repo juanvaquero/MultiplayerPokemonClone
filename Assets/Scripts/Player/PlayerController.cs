@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _speed = 5f; // Player movement speed
 
+    private bool _blockMovement = false;
     private Vector2 _moveDirection; // Current movement direction of the player
     private Rigidbody2D _rigidBody; // Player's Rigidbody2D component
 
@@ -23,10 +24,17 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _pokemonInventory = GetComponent<PokemonInventory>();
         _moveDirection = Vector2.zero; // Set the initial movement direction to (0, 0)
+
+        CombatManager combatManager = GameManager.Instance.CombatManager;
+        combatManager.OnCombatStart = BlockPlayerMovement;
+        combatManager.OnCombatEnd = UnBlockPlayerMovement;
     }
 
     void Update()
     {
+        if (_blockMovement)
+            return;
+
         // Get horizontal and vertical input axis values
         float horizontalInput = Input.GetAxisRaw(HORIZONTAL);
         float verticalInput = Input.GetAxisRaw(VERTICAL);
@@ -48,6 +56,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (_blockMovement)
+            return;
+
         // Move the player based on the current movement direction and speed
         _rigidBody.MovePosition(_rigidBody.position + _moveDirection * _speed * Time.deltaTime);
     }
@@ -65,4 +76,17 @@ public class PlayerController : MonoBehaviour
     public PokemonInventory GetPokemonInventory()
     {
         return _pokemonInventory;
-    }}
+    }
+
+    public void UnBlockPlayerMovement()
+    {
+        _blockMovement = false;
+    }
+
+    public void BlockPlayerMovement()
+    {
+        _blockMovement = true;
+        //To reset animation player to idle state
+        _animator.SetFloat(SPEED, 0f);
+    }
+}

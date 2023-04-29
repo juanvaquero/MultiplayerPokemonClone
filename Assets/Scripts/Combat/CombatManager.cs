@@ -17,14 +17,16 @@ public class CombatManager : MonoBehaviour
     public UnityAction OnCombatStart { get; set; }
     public UnityAction OnCombatEnd { get; set; }
 
-    public UnityAction<Movement> OnExecuteMovementCallback;
-    public UnityAction<Ability> OnExecuteAbilityCallback;
+    public UnityAction<int> HealthChanged;
+    public UnityAction<CombatAction> MovementExecuted;
+    public UnityAction<CombatAction> AbilityExecuted;
 
     private void Awake()
     {
         gameObject.SetActive(false);
-        OnExecuteMovementCallback = AttackMove;
-        OnExecuteAbilityCallback = DoAbility;
+
+        MovementExecuted += DoPlayerMovement;
+        AbilityExecuted += DoPlayerAbility;
     }
 
     void Update()
@@ -49,10 +51,14 @@ public class CombatManager : MonoBehaviour
         _opponentUnit.LoadCombatUnit(pokemon, false);
     }
 
-    public void AttackMove(Movement movement)
+    public void DoPlayerMovement(CombatAction movement)
     {
+        bool opponentFainted = movement.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
+
+        HealthChanged.Invoke(_opponentUnit.Pokemon.CurrentHealth);
+
         // Check if the defender has fainted
-        if (movement.ExecuteMovement(_playerUnit.Pokemon, _opponentUnit.Pokemon))
+        if (opponentFainted)
         {
             // If the defender has fainted, end the combat
             //TODO Check it the opponent have more pokemons
@@ -65,12 +71,11 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public void DoAbility(Ability ability)
+    public void DoPlayerAbility(CombatAction ability)
     {
-        ability.ExecuteAbility(_playerUnit.Pokemon, _opponentUnit.Pokemon);
+        ability.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
         //TODO check if the ability is unlocked fot enable the button
     }
-
 
     public void StartWildEncounter(Pokemon wildPokemon)
     {
@@ -83,7 +88,7 @@ public class CombatManager : MonoBehaviour
         _playerUnit.gameObject.SetActive(true);
         _opponentUnit.gameObject.SetActive(true);
 
-        _uiCombatController.Initialize(_playerUnit.Pokemon, _opponentUnit.Pokemon);
+        _uiCombatController.Initialize(_playerUnit.Pokemon, _opponentUnit.Pokemon, this);
 
         gameObject.SetActive(true);
     }

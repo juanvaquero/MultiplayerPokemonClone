@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class Movement
+public class Movement : CombatAction
 {
-    public string Name { get; set; }
     public float Power { get; set; }
     public float Accuracy { get; }
 
@@ -19,7 +18,7 @@ public class Movement
     /// <param name="attacker"></param>
     /// <param name="defender"></param>
     /// <returns>True: Defender defeated. False: Defender alive.</returns>
-    public bool ExecuteMovement(Pokemon attacker, Pokemon defender)
+    public override bool Execute(Pokemon attacker, Pokemon defender)
     {
         // Calculate the damage the attacker's move will do to the defender
         float damage = Power - defender.Defense;
@@ -30,6 +29,7 @@ public class Movement
         // Check if the defender has fainted
         if (defender.CurrentHealth <= 0)
         {
+            defender.CurrentHealth = 0;
             return true;
         }
         else
@@ -37,6 +37,4 @@ public class Movement
             return false;
         }
     }
-
-
 }

@@ -26,6 +26,7 @@ public class UICombatController : MonoBehaviour
     [SerializeField]
     private Button _runButton;
 
+    private CombatManager _combatManager;
 
     private void Start()
     {
@@ -33,17 +34,17 @@ public class UICombatController : MonoBehaviour
         _runButton.onClick.AddListener(Run);
     }
 
-    public void Initialize(Pokemon playerPokemon, Pokemon opponentPokemon)
+    public void Initialize(Pokemon playerPokemon, Pokemon opponentPokemon, CombatManager combatManager)
     {
-        _playerInfoPanel.Initialize(playerPokemon.Name, playerPokemon.MaxHealth, playerPokemon.CurrentHealth);
-        _opponentInfoPanel.Initialize(opponentPokemon.Name, opponentPokemon.MaxHealth, opponentPokemon.CurrentHealth);
+        _combatManager = combatManager;
+
+        _playerInfoPanel.Initialize(playerPokemon.Name, playerPokemon.MaxHealth, playerPokemon.CurrentHealth, combatManager);
+        _opponentInfoPanel.Initialize(opponentPokemon.Name, opponentPokemon.MaxHealth, opponentPokemon.CurrentHealth, combatManager);
 
         SetTextGeneralInfoPanel("What will " + playerPokemon.Name + " do?");
 
-        //TODO fill movement panels
-        _movementsPanel.Initialize(playerPokemon.Movements, playerPokemon.Abilities);
+        _movementsPanel.Initialize(playerPokemon.Movements, playerPokemon.Abilities, combatManager);
     }
-
 
 
     private void SetTextGeneralInfoPanel(string text)
@@ -59,8 +60,7 @@ public class UICombatController : MonoBehaviour
 
     private void Run()
     {
-        CombatManager combatManager = GameManager.Instance.CombatManager;
-        combatManager.EndCombat();
+        _combatManager.EndCombat();
         //TODO review if it is necessary unload something more
     }
 

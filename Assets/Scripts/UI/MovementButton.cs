@@ -13,12 +13,23 @@ public class MovementButton : MonoBehaviour
     [SerializeField]
     private Button _button;
 
+    private CombatAction _combatAction;
+    private UnityAction<CombatAction> _eventAction;
+
     //TODO Implement tooltip for show description
 
-    public void Initialize(string name, string description, UnityAction moveAction)
+    public void Initialize(CombatAction combatAction, UnityAction<CombatAction> action)
     {
-        _buttonText.text = name;
-        _button.onClick.AddListener(moveAction);
+        _combatAction = combatAction;
+        _eventAction = action;
+
+        _buttonText.text = combatAction.Name;
+        _button.onClick.AddListener(MoveAction);
+    }
+
+    private void MoveAction()
+    {
+        _eventAction.Invoke(_combatAction);
     }
 
 }

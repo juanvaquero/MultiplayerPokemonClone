@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class Ability
+public class Ability : CombatAction
 {
-    public string Name { get; }
-    public string Description { get; }
-
     protected string _abilityType;
     protected int _amountStatAffected;
 
@@ -21,9 +18,9 @@ public class Ability
         _currentAbilityCooldown = 0;
     }
 
-    public virtual void ExecuteAbility(Pokemon playerPokemon, Pokemon otherPokemon)
+    public override bool Execute(Pokemon attacker, Pokemon defender)
     {
-        CheckAndUpdateCooldown();
+        return CheckAndUpdateCooldown();
     }
 
     protected bool CheckAndUpdateCooldown()

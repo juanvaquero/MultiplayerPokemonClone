@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.Events;
 public class UIPokemonInfoPanel : MonoBehaviour
 {
     [SerializeField]
@@ -13,19 +13,22 @@ public class UIPokemonInfoPanel : MonoBehaviour
 
     private int _maxHealth;
 
-    public void Initialize(string name, int maxHealth, int health)
+    public void Initialize(string name, int maxHealth, int health, CombatManager combatManager)
     {
         _maxHealth = maxHealth;
         _pokemonNameText.text = name;
         _pokemonHealthbar.maxValue = maxHealth;
         UpdateHealthInfo(health);
-        //TODO suscribe a event of update health in pokemon
+
+        //Subscribe a event of update health in pokemon
+        combatManager.HealthChanged += UpdateHealthInfo;
     }
 
     public void UpdateHealthInfo(int health)
     {
+        Debug.LogError("eee " + health);
         _pokemonHealthText.text = health + "/" + _maxHealth;
-        _pokemonHealthbar.value = health;//TODO review how to asing better the value of slider.
+        _pokemonHealthbar.value = health;
     }
 
 }

@@ -15,12 +15,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidBody; // Player's Rigidbody2D component
 
     private Animator _animator; // Player's Animator component
-
+    private PokemonInventory _pokemonInventory; // Pokemon inventory component
 
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _pokemonInventory = GetComponent<PokemonInventory>();
         _moveDirection = Vector2.zero; // Set the initial movement direction to (0, 0)
     }
 
@@ -60,4 +61,8 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.PokemonSpawner.TryEncounterPokemon(playerPosition);
         }
     }
-}
+
+    public PokemonInventory GetPokemonInventory()
+    {
+        return _pokemonInventory;
+    }}

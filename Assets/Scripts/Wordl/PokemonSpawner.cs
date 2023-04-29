@@ -8,13 +8,16 @@ public class PokemonSpawner : MonoBehaviour
     public const string PLAYER = "Player";
 
     // Probability of encountering a Pokemon
-    public float _encounterProbability = 0.5f;
+    [SerializeField]
+    private float _encounterProbability = 0.5f;
 
     // List of Pokemon that can be encountered in this area
-    public List<GameObject> PokemonList;
+    [SerializeField]
+    private List<PokemonData> _pokemonList;
 
     // Delay before starting the battle
-    public float BattleDelay = 1.0f;
+    [SerializeField]
+    private float _battleDelay = 0.5f;
 
     [SerializeField]
     private Tilemap _spawneableTileMap;
@@ -38,7 +41,6 @@ public class PokemonSpawner : MonoBehaviour
         return Physics2D.OverlapCircle(playerPosition, 0.2f, _spawneableLayerMask) != null;
     }
 
-
     /// <summary>
     /// The encounter when the player enters the grass
     /// </summary>
@@ -47,27 +49,28 @@ public class PokemonSpawner : MonoBehaviour
         // Roll the dice to determine if a Pokemon will be encountered
         if (CheckIsSpawnable(playerPosition) && Random.Range(0.0f, 1.0f) <= _encounterProbability)
         {
-            Debug.LogError("Start the pokemon encounter");
-            if (PokemonList.Count == 0)
+            if (_pokemonList.Count == 0)
                 return;
 
             // Choose a random Pokemon from the list
-            int index = Random.Range(0, PokemonList.Count);
-            GameObject pokemonPrefab = PokemonList[index];
+            int index = Random.Range(0, _pokemonList.Count);
+            PokemonData pokemonData = _pokemonList[index];
 
-            // Spawn the Pokemon and start the battle
-            GameObject pokemonObject = Instantiate(pokemonPrefab, transform.position, Quaternion.identity);
-            StartCoroutine(StartBattle(pokemonObject));
+            Pokemon pokemon = new Pokemon(pokemonData);
+            StartCoroutine(StartBattle(pokemon));
         }
     }
 
     // Coroutine to start the battle after a delay
-    private IEnumerator StartBattle(GameObject pokemon)
+    private IEnumerator StartBattle(Pokemon pokemon)
     {
-        yield return new WaitForSeconds(BattleDelay);
+        CombatManager combatManager = GameManager.Instance.CombatManager;
+        combatManager.OnCombatStart.Invoke();
+
+        yield return new WaitForSeconds(_battleDelay);
 
         // Start the battle with the Pokemon
-        //TODO BattleSystem.Instance.StartBattle(pokemon);
+        combatManager.StartWildEncounter(pokemon);
     }
 
 }

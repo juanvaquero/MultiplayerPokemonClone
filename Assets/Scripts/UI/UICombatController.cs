@@ -38,8 +38,8 @@ public class UICombatController : MonoBehaviour
     {
         _combatManager = combatManager;
 
-        _playerInfoPanel.Initialize(playerPokemon.Name, playerPokemon.MaxHealth, playerPokemon.CurrentHealth, combatManager);
-        _opponentInfoPanel.Initialize(opponentPokemon.Name, opponentPokemon.MaxHealth, opponentPokemon.CurrentHealth, combatManager);
+        _playerInfoPanel.Initialize(playerPokemon.Name, playerPokemon.MaxHealth, playerPokemon.CurrentHealth, combatManager.PlayerUnit);
+        _opponentInfoPanel.Initialize(opponentPokemon.Name, opponentPokemon.MaxHealth, opponentPokemon.CurrentHealth, combatManager.OpponentUnit);
 
         SetTextGeneralInfoPanel("What will " + playerPokemon.Name + " do?");
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CombatUnit : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class CombatUnit : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _pokemonRenderer;
 
-
+    public UnityAction<int> HealthChanged;
 
     public void LoadCombatUnit(Pokemon pokemon, bool isPlayerUnit)
     {

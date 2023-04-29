@@ -13,7 +13,7 @@ public class UIPokemonInfoPanel : MonoBehaviour
 
     private int _maxHealth;
 
-    public void Initialize(string name, int maxHealth, int health, CombatManager combatManager)
+    public void Initialize(string name, int maxHealth, int health, CombatUnit combatUnit)
     {
         _maxHealth = maxHealth;
         _pokemonNameText.text = name;
@@ -21,7 +21,7 @@ public class UIPokemonInfoPanel : MonoBehaviour
         UpdateHealthInfo(health);
 
         //Subscribe a event of update health in pokemon
-        combatManager.HealthChanged += UpdateHealthInfo;
+        combatUnit.HealthChanged += UpdateHealthInfo;
     }
 
     public void UpdateHealthInfo(int health)

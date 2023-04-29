@@ -6,8 +6,17 @@ public class CombatManager : MonoBehaviour
 {
     [SerializeField]
     private CombatUnit _playerUnit; // Instance of the player's unit
+    public CombatUnit PlayerUnit
+    {
+        get { return _playerUnit; }
+    }
+
     [SerializeField]
     private CombatUnit _opponentUnit; // Instance of the enemy's unit
+    public CombatUnit OpponentUnit
+    {
+        get { return _opponentUnit; }
+    }
 
     [SerializeField]
     private UICombatController _uiCombatController; // Instance of the UI Combat Controller
@@ -17,7 +26,6 @@ public class CombatManager : MonoBehaviour
     public UnityAction OnCombatStart { get; set; }
     public UnityAction OnCombatEnd { get; set; }
 
-    public UnityAction<int> HealthChanged;
     public UnityAction<CombatAction> MovementExecuted;
     public UnityAction<CombatAction> AbilityExecuted;
 
@@ -83,7 +91,7 @@ public class CombatManager : MonoBehaviour
     {
         bool opponentFainted = movement.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
 
-        HealthChanged.Invoke(_opponentUnit.Pokemon.CurrentHealth);
+        _opponentUnit.HealthChanged.Invoke(_opponentUnit.Pokemon.CurrentHealth);
 
         // Check if the defender has fainted
         if (opponentFainted)

@@ -56,7 +56,7 @@ public class UICombatController : MonoBehaviour
 
     private void Run()
     {
-        _combatManager.EndCombat();
+        StartCoroutine(_combatManager.EndCombat());
     }
 
     public void SetInteractableRunButton(bool enable)

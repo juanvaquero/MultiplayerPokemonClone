@@ -75,8 +75,8 @@ public class CombatManager : MonoBehaviour
         SpawnOpponentPokemon(wildPokemon);
         SpawnPlayerPokemon(playerPokemon);
 
-        yield return ShowDialogWithDelay("A wild" + wildPokemon.Name + " appeared in the grass.");
-        yield return ShowDialogWithDelay("Player choose " + playerPokemon.Name + ",what shall we do?");
+        yield return ShowDialogWithDelay("A wild " + wildPokemon.Name + " appeared in the grass.");
+        yield return ShowDialogWithDelay("Player choose " + playerPokemon.Name + ", what shall we do?");
 
         yield return WaitToShowGeneralButtons();
     }
@@ -93,9 +93,9 @@ public class CombatManager : MonoBehaviour
         _uiCombatController.SetEnableGeneralButtons(false);
 
         if (isPlayer)
-            yield return _uiCombatController.TypeCombatDialog("Player's " + pokemon.Name + " do " + movement.Name, null);
+            yield return _uiCombatController.TypeCombatDialog("Player's " + pokemon.Name + " do " + movement.Name + ".", null);
         else
-            yield return _uiCombatController.TypeCombatDialog("Opponent's " + pokemon.Name + " do " + movement.Name, null);
+            yield return _uiCombatController.TypeCombatDialog("Opponent's " + pokemon.Name + " do " + movement.Name + ".", null);
 
         yield return new WaitForSeconds(_delayBettwenDialogs);
     }
@@ -108,9 +108,13 @@ public class CombatManager : MonoBehaviour
 
     public IEnumerator EndCombat(Pokemon winner = null)
     {
+        _uiCombatController.SetEnableGeneralButtons(false);
+
         // Display victory message and end combat
         if (winner != null)
             yield return _uiCombatController.TypeCombatDialog(winner.Name + " wins the battle!");
+        else
+            yield return _uiCombatController.TypeCombatDialog("You escaped from the combat!");
 
         yield return new WaitForSeconds(_delayBettwenDialogs);
         OnCombatEnd.Invoke();
@@ -122,7 +126,7 @@ public class CombatManager : MonoBehaviour
         // Check if the defender has fainted
         if (opponentFainted)
         {
-            yield return ShowDialogWithDelay(pokemonFainted.Name + " is fainted");
+            yield return ShowDialogWithDelay(pokemonFainted.Name + " is fainted.");
 
             Pokemon nextPokemon = pokemonsInCombat.GetFirstReadyPokemon();
             //If is a player, check if he have more pokemons
@@ -181,7 +185,7 @@ public class CombatManager : MonoBehaviour
         Debug.LogError("Execute " + ability.Name);
         // ability.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
 
-        // //TODO check if the ability is unlocked fot enable the button
+        //TODO check if the ability is unlocked fot enable the button
         playerTurn = !playerTurn;
     }
 
@@ -213,7 +217,7 @@ public class CombatManager : MonoBehaviour
         Debug.LogError("Execute " + ability.Name);
         // ability.Execute(_opponentUnit.Pokemon, _playerUnit.Pokemon);
 
-        // //TODO check if the ability is unlocked fot enable the button
+        //TODO check if the ability is unlocked fot enable the button
         playerTurn = !playerTurn;
     }
 

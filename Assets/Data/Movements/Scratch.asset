@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Scratch
   m_EditorClassIdentifier: 
   Name: Scratch
-  Power: 10
+  Power: 20
   Accuracy: 1

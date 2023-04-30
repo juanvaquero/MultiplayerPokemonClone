@@ -1,11 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.SceneManagement;
 public class UINetworkMenu : MonoBehaviourPunCallbacks
 {
     public const string GAME_SCENE = "Game";
-
 
     [SerializeField]
     private UIPanelNetwork _playerPanel;
@@ -36,7 +34,6 @@ public class UINetworkMenu : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        SceneManager.LoadScene(GAME_SCENE);
+        PhotonNetwork.LoadLevel(GAME_SCENE);
     }
-
 }

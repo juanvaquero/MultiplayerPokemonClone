@@ -47,28 +47,17 @@ public class CombatManager : MonoBehaviour
         AbilityExecuted += DoPlayerAbility;
     }
 
-    private void Update()
+    private void SpawnPlayerPokemon(Pokemon pokemon)
     {
-
-    }
-
-    private IEnumerator SpawnPlayerPokemon(Pokemon pokemon)
-    {
+        Debug.LogError("SpawnPlayerPokemon " + pokemon.Name + " " + pokemon.GetHashCode());
         _playerUnit.LoadCombatUnit(pokemon, true);
-        yield return ShowDialogWithDelay("Player choose " + pokemon.Name + ",what shall we do?");
 
         _uiCombatController.LoadPokemonMovements(_playerUnit.Pokemon, this);
-        yield return WaitToShowMovements();
     }
 
-    private IEnumerator SpawnOpponentPokemon(Pokemon pokemon, bool isWildPokemon = true)
+    private void SpawnOpponentPokemon(Pokemon pokemon)
     {
         _opponentUnit.LoadCombatUnit(pokemon, false);
-        if (isWildPokemon)
-            yield return ShowDialogWithDelay("A wild" + pokemon.Name + " appeared in the grass.");
-        else
-            yield return ShowDialogWithDelay("Opponet choose " + pokemon.Name + ".");
-
     }
 
     public IEnumerator StartWildEncounter(Pokemon wildPokemon)
@@ -83,8 +72,13 @@ public class CombatManager : MonoBehaviour
         //Spawn first player pokemon
         Pokemon playerPokemon = pokemonInventory.GetFirstReadyPokemon();
 
-        yield return SpawnOpponentPokemon(wildPokemon);
-        yield return SpawnPlayerPokemon(playerPokemon);
+        SpawnOpponentPokemon(wildPokemon);
+        SpawnPlayerPokemon(playerPokemon);
+
+        yield return ShowDialogWithDelay("A wild" + wildPokemon.Name + " appeared in the grass.");
+        yield return ShowDialogWithDelay("Player choose " + playerPokemon.Name + ",what shall we do?");
+
+        yield return WaitToShowGeneralButtons();
     }
 
     private IEnumerator ShowDialogWithDelay(string text)
@@ -106,7 +100,7 @@ public class CombatManager : MonoBehaviour
         yield return new WaitForSeconds(_delayBettwenDialogs);
     }
 
-    private IEnumerator WaitToShowMovements()
+    private IEnumerator WaitToShowGeneralButtons()
     {
         yield return new WaitForSeconds(0.5f);
         _uiCombatController.SetEnableGeneralButtons(true);
@@ -139,11 +133,18 @@ public class CombatManager : MonoBehaviour
             }
             else
             {
-                // If the defender has more pokemons change of turn and spawn a new pokemon.
+                // If the opponent has more pokemons change of turn and spawn a new pokemon.
                 if (playerTurn)
-                    SpawnOpponentPokemon(nextPokemon, false);
+                {
+                    SpawnOpponentPokemon(nextPokemon);
+                    yield return ShowDialogWithDelay("Opponent choose " + nextPokemon.Name + ".");
+                }
                 else
+                {
                     SpawnPlayerPokemon(nextPokemon);
+                    yield return ShowDialogWithDelay("Player choose " + nextPokemon.Name + ",what shall we do?");
+                    yield return WaitToShowGeneralButtons();
+                }
 
                 playerTurn = !playerTurn;
             }
@@ -203,7 +204,7 @@ public class CombatManager : MonoBehaviour
 
         yield return CheckPokemonFainted(opponentFainted, _playerPokemons, _playerUnit.Pokemon, _opponentUnit.Pokemon);
 
-        yield return WaitToShowMovements();
+        yield return WaitToShowGeneralButtons();
     }
 
 

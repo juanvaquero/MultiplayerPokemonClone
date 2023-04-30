@@ -46,8 +46,12 @@ public class PokemonSpawner : MonoBehaviour
     /// </summary>
     public void TryEncounterPokemon(Vector3 playerPosition)
     {
+        bool allFainted = GameManager.Instance.PlayerController.GetPokemonInventory().AreAllPokemonFainted();
+        if (allFainted)
+            Debug.Log("All pokemons are fainted, try to recovery them in the store.");
+
         // Roll the dice to determine if a Pokemon will be encountered
-        if (CheckIsSpawnable(playerPosition) && Random.Range(0.0f, 1.0f) <= _encounterProbability)
+        if (CheckIsSpawnable(playerPosition) && Random.Range(0.0f, 1.0f) <= _encounterProbability && !allFainted)
         {
             if (_pokemonList.Count == 0)
                 return;
@@ -70,7 +74,7 @@ public class PokemonSpawner : MonoBehaviour
         yield return new WaitForSeconds(_battleDelay);
 
         // Start the battle with the Pokemon
-        combatManager.StartWildEncounter(pokemon);
+        yield return combatManager.StartWildEncounter(pokemon);
     }
 
 }

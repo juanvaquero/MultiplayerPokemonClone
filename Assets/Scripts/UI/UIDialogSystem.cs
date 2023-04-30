@@ -14,15 +14,9 @@ public class UIDialogSystem : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _infoPanelText;
 
-    public void SetTextInfoPanel(string text, IEnumerator callback)
+    public IEnumerator TypeDialog(string text)
     {
-        SetEnableCombatDialog(true);
-        StartCoroutine(TypeDialog(text, callback));
-    }
-
-    public IEnumerator TypeDialog(string text, IEnumerator callback)
-    {
-        SetEnableCombatDialog(true);
+        SetEnableDialog(true);
 
         //Reset the dialog
         _infoPanelText.text = "";
@@ -31,11 +25,9 @@ public class UIDialogSystem : MonoBehaviour
             _infoPanelText.text += letter;
             yield return new WaitForSeconds(1f / _letterPerSecond);
         }
-        if (callback != null)
-            StartCoroutine(callback);
     }
 
-    public void SetEnableCombatDialog(bool enable)
+    public void SetEnableDialog(bool enable)
     {
         _panel.SetActive(enable);
     }

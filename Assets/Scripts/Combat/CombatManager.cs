@@ -49,9 +49,7 @@ public class CombatManager : MonoBehaviour
 
     private void SpawnPlayerPokemon(Pokemon pokemon)
     {
-        Debug.LogError("SpawnPlayerPokemon " + pokemon.Name + " " + pokemon.GetHashCode());
         _playerUnit.LoadCombatUnit(pokemon, true);
-
         _uiCombatController.LoadPokemonMovements(_playerUnit.Pokemon, this);
     }
 
@@ -60,15 +58,14 @@ public class CombatManager : MonoBehaviour
         _opponentUnit.LoadCombatUnit(pokemon, false);
     }
 
-    public IEnumerator StartWildEncounter(Pokemon wildPokemon)
+    public IEnumerator StartWildEncounter(Pokemon wildPokemon, PokemonInventory pokemonInventory)
     {
         gameObject.SetActive(true);
 
-        _playerPokemons = GameManager.Instance.PlayerController.GetPokemonInventory();
+        _playerPokemons = pokemonInventory;
         _opponentPokemons = new PokemonInventory();
         _opponentPokemons.AddPokemon(wildPokemon);
 
-        PokemonInventory pokemonInventory = GameManager.Instance.PlayerController.GetPokemonInventory();
         //Spawn first player pokemon
         Pokemon playerPokemon = pokemonInventory.GetFirstReadyPokemon();
 

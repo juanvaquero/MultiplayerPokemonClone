@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             //Move the position of the player to down direction for check the bottom of the player sprite.
             Vector3 playerPosition = transform.position + Vector3.down * 0.5f;
-            GameManager.Instance.PokemonSpawner.TryEncounterPokemon(playerPosition);
+            GameManager.Instance.PokemonSpawner.TryEncounterPokemon(playerPosition, _pokemonInventory);
         }
     }
 

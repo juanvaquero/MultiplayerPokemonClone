@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Photon.Pun;
+
 public class UINetworkMenu : MonoBehaviourPunCallbacks
 {
     public const string GAME_SCENE = "Game";

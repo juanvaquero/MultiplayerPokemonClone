@@ -24,13 +24,6 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField]
-    private PlayerController _playerController;
-    public PlayerController PlayerController
-    {
-        get { return _playerController; }
-    }
-
-    [SerializeField]
     private PokemonSpawner _pokemonSpawner;
     public PokemonSpawner PokemonSpawner
     {

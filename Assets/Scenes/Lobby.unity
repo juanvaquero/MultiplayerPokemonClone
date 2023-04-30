@@ -160,10 +160,10 @@ RectTransform:
   m_Father: {fileID: 1137978571}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.25014308}
+  m_AnchorMax: {x: 1, y: 0.7498569}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -540.3091}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264117456
 MonoBehaviour:
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 264117454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c71c85ea5bf4641848b259b35de71dc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a691376edb3d4d388006e3c9e20806d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _playerPanel: {fileID: 1853894008}
@@ -330,10 +330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -482,6 +482,10 @@ PrefabInstance:
     - target: {fileID: 4177893116698604466, guid: c9f2e6b32bcbd4651ad96b42505e33fc, type: 3}
       propertyPath: m_text
       value: 'Join:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887494978332618800, guid: c9f2e6b32bcbd4651ad96b42505e33fc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.9402008
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9f2e6b32bcbd4651ad96b42505e33fc, type: 3}
@@ -927,7 +931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4887494978332618800, guid: c9f2e6b32bcbd4651ad96b42505e33fc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000011444092
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 7341896424168794499, guid: c9f2e6b32bcbd4651ad96b42505e33fc, type: 3}
       propertyPath: m_IsActive
@@ -1050,10 +1054,6 @@ PrefabInstance:
     - target: {fileID: 4177893115002943839, guid: c9f2e6b32bcbd4651ad96b42505e33fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4177893116698604466, guid: c9f2e6b32bcbd4651ad96b42505e33fc, type: 3}
-      propertyPath: m_text
-      value: 'Create Room:'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9f2e6b32bcbd4651ad96b42505e33fc, type: 3}

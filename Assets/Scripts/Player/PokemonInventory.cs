@@ -15,6 +15,11 @@ public class PokemonInventory : MonoBehaviour
 
     private void Start()
     {
+        GenerateRandomPokemons();
+    }
+
+    public void GenerateRandomPokemons()
+    {
         // Generate a new inventory of Pokémon every time the game is executed
         for (int i = 0; i < MAX_POKEMON; i++)
         {
@@ -36,6 +41,17 @@ public class PokemonInventory : MonoBehaviour
                 return p;
         }
         return null;
+    }
+
+    public bool AreAllPokemonFainted()
+    {
+        return GetFirstReadyPokemon() == null;
+    }
+
+    public void AddPokemon(Pokemon pokemon)
+    {
+        if (_pokemons.Count < MAX_POKEMON)
+            _pokemons.Add(pokemon);
     }
 
 }

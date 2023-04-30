@@ -13,6 +13,10 @@ public class CombatUnit : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _pokemonRenderer;
 
+    [Header("Pokemon info panel")]
+    [SerializeField]
+    private UIPokemonInfoPanel _pokemonInfoPanel;
+
     public UnityAction<int> HealthChanged;
 
     public void LoadCombatUnit(Pokemon pokemon, bool isPlayerUnit)
@@ -21,6 +25,8 @@ public class CombatUnit : MonoBehaviour
 
         _pokemonRenderer.sprite = _pokemon.GetSprite();
         _pokemonRenderer.flipX = isPlayerUnit;
+
+        _pokemonInfoPanel.Initialize(pokemon.Name, pokemon.MaxHealth, pokemon.CurrentHealth, this);
     }
 
 }

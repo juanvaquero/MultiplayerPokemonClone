@@ -26,7 +26,6 @@ public class UIPokemonInfoPanel : MonoBehaviour
 
     public void UpdateHealthInfo(int health)
     {
-        Debug.LogError("eee " + health);
         _pokemonHealthText.text = health + "/" + _maxHealth;
         _pokemonHealthbar.value = health;
     }

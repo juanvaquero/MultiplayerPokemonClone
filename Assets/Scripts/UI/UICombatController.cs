@@ -4,11 +4,6 @@ using TMPro;
 
 public class UICombatController : MonoBehaviour
 {
-    [Header("Pokemon info panels")]
-    [SerializeField]
-    private UIPokemonInfoPanel _playerInfoPanel;
-    [SerializeField]
-    private UIPokemonInfoPanel _opponentInfoPanel;
 
     [Header("General info panel")]
     [SerializeField]
@@ -34,18 +29,19 @@ public class UICombatController : MonoBehaviour
         _runButton.onClick.AddListener(Run);
     }
 
-    public void Initialize(Pokemon playerPokemon, Pokemon opponentPokemon, CombatManager combatManager)
+    public void Initialize(Pokemon playerPokemon, CombatManager combatManager)
     {
         _combatManager = combatManager;
 
-        _playerInfoPanel.Initialize(playerPokemon.Name, playerPokemon.MaxHealth, playerPokemon.CurrentHealth, combatManager.PlayerUnit);
-        _opponentInfoPanel.Initialize(opponentPokemon.Name, opponentPokemon.MaxHealth, opponentPokemon.CurrentHealth, combatManager.OpponentUnit);
+        LoadPokemonActions(playerPokemon, combatManager);
 
         SetTextGeneralInfoPanel("What will " + playerPokemon.Name + " do?");
-
-        _movementsPanel.Initialize(playerPokemon.Movements, playerPokemon.Abilities, combatManager);
     }
 
+    public void LoadPokemonActions(Pokemon playerPokemon, CombatManager combatManager)
+    {
+        _movementsPanel.Initialize(playerPokemon.Movements, playerPokemon.Abilities, combatManager);
+    }
 
     private void SetTextGeneralInfoPanel(string text)
     {

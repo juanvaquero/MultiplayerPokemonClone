@@ -25,7 +25,6 @@ public class Movement : CombatAction
         float attackNormalized = attacker.Attack / 255f;
         // Calculate the damage the attacker's move will do to the defender
         float damage = attackNormalized * Power - ((float)attacker.Attack / defender.Defense) + 2;
-        Debug.LogError(damage + "damage = 1");
 
         // Apply the damage to the defender's health
         defender.CurrentHealth -= Mathf.FloorToInt(damage * modifier);

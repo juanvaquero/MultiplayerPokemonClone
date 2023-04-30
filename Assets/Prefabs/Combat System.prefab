@@ -943,7 +943,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4866712501113622824}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -964,6 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a948955e84f4c4e3b8083ce13eee2282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _delayOfOpponentAction: 3
   _playerUnit: {fileID: 3247863710672582424}
   _opponentUnit: {fileID: 3247863709642076857}
   _uiCombatController: {fileID: 8237837825392042928}
@@ -1642,8 +1643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f235d2f15354dcc954283f425b6cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInfoPanel: {fileID: 8252161731905558529}
-  _opponentInfoPanel: {fileID: 2422149267109392214}
   _infoPanel: {fileID: 6753604580237693154}
   _infoPanelText: {fileID: 2596188911003150845}
   _movementsPanel: {fileID: 3769741390643874104}
@@ -2946,6 +2945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Combat Unit - Opponent
       objectReference: {fileID: 0}
+    - target: {fileID: 7969317358750836940, guid: c4ea95438c5194af4a61144ef828da1c, type: 3}
+      propertyPath: _pokemonInfoPanel
+      value: 
+      objectReference: {fileID: 2422149267109392214}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ea95438c5194af4a61144ef828da1c, type: 3}
 --- !u!114 &3247863709642076857 stripped
@@ -3019,6 +3022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Combat Unit - Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7969317358750836940, guid: c4ea95438c5194af4a61144ef828da1c, type: 3}
+      propertyPath: _pokemonInfoPanel
+      value: 
+      objectReference: {fileID: 8252161731905558529}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ea95438c5194af4a61144ef828da1c, type: 3}
 --- !u!114 &3247863710672582424 stripped

@@ -1,9 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using System.Collections;
 
 public class CombatManager : MonoBehaviour
 {
+    [SerializeField]
+    private float _delayOfOpponentAction = 1f;
+
     [SerializeField]
     private CombatUnit _playerUnit; // Instance of the player's unit
     public CombatUnit PlayerUnit
@@ -17,6 +21,9 @@ public class CombatManager : MonoBehaviour
     {
         get { return _opponentUnit; }
     }
+
+    private PokemonInventory _playerPokemons;
+    private PokemonInventory _opponentPokemons;
 
     [SerializeField]
     private UICombatController _uiCombatController; // Instance of the UI Combat Controller
@@ -41,36 +48,41 @@ public class CombatManager : MonoBehaviour
     {
         if (playerTurn)
         {
+            Debug.LogError("Player turn");
             // Player's turn logic goes here
         }
         else
         {
+            Debug.LogError("Opponent turn");
             // Enemy's turn logic goes here
         }
     }
 
     void SpawnPlayerPokemon(Pokemon pokemon)
     {
+        Debug.LogError("SpawnPlayerPokemon -> " + pokemon.Name);
         _playerUnit.LoadCombatUnit(pokemon, true);
+
+        _uiCombatController.Initialize(_playerUnit.Pokemon, this);
     }
 
     void SpawnOpponentPokemon(Pokemon pokemon)
     {
+        Debug.LogError("SpawnOpponentPokemon -> " + pokemon.Name);
         _opponentUnit.LoadCombatUnit(pokemon, false);
     }
 
     public void StartWildEncounter(Pokemon wildPokemon)
     {
+        _playerPokemons = GameManager.Instance.PlayerController.GetPokemonInventory();
+        _opponentPokemons = new PokemonInventory();
+        _opponentPokemons.AddPokemon(wildPokemon);
+
         SpawnOpponentPokemon(wildPokemon);
 
         PokemonInventory pokemonInventory = GameManager.Instance.PlayerController.GetPokemonInventory();
         //Spawn first player pokemon
         SpawnPlayerPokemon(pokemonInventory.GetFirstReadyPokemon());
-
-        _playerUnit.gameObject.SetActive(true);
-        _opponentUnit.gameObject.SetActive(true);
-
-        _uiCombatController.Initialize(_playerUnit.Pokemon, _opponentUnit.Pokemon, this);
 
         gameObject.SetActive(true);
     }
@@ -85,6 +97,39 @@ public class CombatManager : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void CheckPokemonFainted(bool opponentFainted, PokemonInventory pokemonsInCombat, Pokemon winner)
+    {
+        // Check if the defender has fainted
+        if (opponentFainted)
+        {
+            Pokemon nextPokemon = pokemonsInCombat.GetFirstReadyPokemon();
+            //If is a player, check if he have more pokemons
+            if (nextPokemon == null)
+            {
+                // If the defender has fainted, end the combat
+                EndCombat(winner);
+            }
+            else
+            {
+                // If the defender has more pokemons change of turn and spawn a new pokemon.
+                if (playerTurn)
+                    SpawnOpponentPokemon(nextPokemon);
+                else
+                    SpawnPlayerPokemon(nextPokemon);
+
+                playerTurn = !playerTurn;
+            }
+        }
+        else
+        {
+
+            if (playerTurn)
+                // If the defender has not fainted, it becomes the other player's turn
+                StartCoroutine(CoroutineOpponentAction());
+            playerTurn = !playerTurn;
+        }
+    }
+
     #region Player movement and abilities
 
     public void DoPlayerMovement(CombatAction movement)
@@ -93,18 +138,7 @@ public class CombatManager : MonoBehaviour
 
         _opponentUnit.HealthChanged.Invoke(_opponentUnit.Pokemon.CurrentHealth);
 
-        // Check if the defender has fainted
-        if (opponentFainted)
-        {
-            // If the defender has fainted, end the combat
-            //TODO Check it the opponent have more pokemons
-            EndCombat(_playerUnit.Pokemon);
-        }
-        else
-        {
-            // If the defender has not fainted, it becomes the other player's turn
-            playerTurn = !playerTurn;
-        }
+        CheckPokemonFainted(opponentFainted, _opponentPokemons, _playerUnit.Pokemon);
     }
 
     public void DoPlayerAbility(CombatAction ability)
@@ -112,13 +146,45 @@ public class CombatManager : MonoBehaviour
         Debug.LogError("Execute " + ability.Name);
         // ability.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
 
-        // playerTurn = !playerTurn;
-        //TODO check if the ability is unlocked fot enable the button
+        // //TODO check if the ability is unlocked fot enable the button
+        playerTurn = !playerTurn;
     }
 
     #endregion
 
     #region Opponent movement and abilities
+
+    public void DoOpponentMovement(CombatAction movement)
+    {
+        bool playerFainted = movement.Execute(_opponentUnit.Pokemon, _playerUnit.Pokemon);
+
+        _playerUnit.HealthChanged.Invoke(_playerUnit.Pokemon.CurrentHealth);
+
+        CheckPokemonFainted(playerFainted, _playerPokemons, _opponentUnit.Pokemon);
+    }
+
+    public void DoOpponentAbility(CombatAction ability)
+    {
+        Debug.LogError("Execute " + ability.Name);
+        // ability.Execute(_opponentUnit.Pokemon, _playerUnit.Pokemon);
+
+        // //TODO check if the ability is unlocked fot enable the button
+        playerTurn = !playerTurn;
+    }
+
+    private void DoRandomOpponentAction()
+    {
+        if (Random.Range(0, 1f) < 1f)
+            DoOpponentMovement(_opponentUnit.Pokemon.Movements[Random.Range(0, _opponentUnit.Pokemon.Movements.Length)]);
+        else
+            DoOpponentAbility(_opponentUnit.Pokemon.Abilities[Random.Range(0, _opponentUnit.Pokemon.Abilities.Length)]);
+    }
+
+    public IEnumerator CoroutineOpponentAction()
+    {
+        yield return new WaitForSeconds(_delayOfOpponentAction);
+        DoRandomOpponentAction();
+    }
 
     #endregion
 

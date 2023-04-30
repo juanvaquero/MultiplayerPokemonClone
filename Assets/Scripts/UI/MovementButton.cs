@@ -5,9 +5,6 @@ using UnityEngine.Events;
 
 public class MovementButton : MonoBehaviour
 {
-    // private string _movementName;
-    // private UnityAction _movementEvent;
-
     [SerializeField]
     private TextMeshProUGUI _buttonText;
     [SerializeField]
@@ -16,14 +13,13 @@ public class MovementButton : MonoBehaviour
     private CombatAction _combatAction;
     private UnityAction<CombatAction> _eventAction;
 
-    //TODO Implement tooltip for show description
-
     public void Initialize(CombatAction combatAction, UnityAction<CombatAction> action)
     {
         _combatAction = combatAction;
         _eventAction = action;
 
         _buttonText.text = combatAction.Name;
+        _button.onClick.RemoveAllListeners();// Reset button listeners
         _button.onClick.AddListener(MoveAction);
     }
 

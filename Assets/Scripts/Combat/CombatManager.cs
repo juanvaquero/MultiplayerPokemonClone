@@ -9,6 +9,9 @@ public class CombatManager : MonoBehaviour
     private float _delayOfOpponentAction = 1f;
 
     [SerializeField]
+    private float _delayBettwenDialogs = 2f;
+
+    [SerializeField]
     private CombatUnit _playerUnit; // Instance of the player's unit
     public CombatUnit PlayerUnit
     {
@@ -44,76 +47,101 @@ public class CombatManager : MonoBehaviour
         AbilityExecuted += DoPlayerAbility;
     }
 
-    void Update()
+    private void Update()
     {
-        if (playerTurn)
-        {
-            Debug.LogError("Player turn");
-            // Player's turn logic goes here
-        }
-        else
-        {
-            Debug.LogError("Opponent turn");
-            // Enemy's turn logic goes here
-        }
+
     }
 
-    void SpawnPlayerPokemon(Pokemon pokemon)
+    private IEnumerator SpawnPlayerPokemon(Pokemon pokemon)
     {
-        Debug.LogError("SpawnPlayerPokemon -> " + pokemon.Name);
         _playerUnit.LoadCombatUnit(pokemon, true);
+        yield return ShowDialogWithDelay("Player choose " + pokemon.Name + ",what shall we do?");
 
-        _uiCombatController.Initialize(_playerUnit.Pokemon, this);
+        _uiCombatController.LoadPokemonMovements(_playerUnit.Pokemon, this);
+        yield return WaitToShowMovements();
     }
 
-    void SpawnOpponentPokemon(Pokemon pokemon)
+    private IEnumerator SpawnOpponentPokemon(Pokemon pokemon, bool isWildPokemon = true)
     {
-        Debug.LogError("SpawnOpponentPokemon -> " + pokemon.Name);
         _opponentUnit.LoadCombatUnit(pokemon, false);
+        if (isWildPokemon)
+            yield return ShowDialogWithDelay("A wild" + pokemon.Name + " appeared in the grass.");
+        else
+            yield return ShowDialogWithDelay("Opponet choose " + pokemon.Name + ".");
+
     }
 
-    public void StartWildEncounter(Pokemon wildPokemon)
+    public IEnumerator StartWildEncounter(Pokemon wildPokemon)
     {
+        gameObject.SetActive(true);
+
         _playerPokemons = GameManager.Instance.PlayerController.GetPokemonInventory();
         _opponentPokemons = new PokemonInventory();
         _opponentPokemons.AddPokemon(wildPokemon);
 
-        SpawnOpponentPokemon(wildPokemon);
-
         PokemonInventory pokemonInventory = GameManager.Instance.PlayerController.GetPokemonInventory();
         //Spawn first player pokemon
-        SpawnPlayerPokemon(pokemonInventory.GetFirstReadyPokemon());
+        Pokemon playerPokemon = pokemonInventory.GetFirstReadyPokemon();
 
-        gameObject.SetActive(true);
+        yield return SpawnOpponentPokemon(wildPokemon);
+        yield return SpawnPlayerPokemon(playerPokemon);
     }
 
-    public void EndCombat(Pokemon winner = null)
+    private IEnumerator ShowDialogWithDelay(string text)
+    {
+        _uiCombatController.SetEnableGeneralButtons(false);
+        yield return _uiCombatController.TypeCombatDialog(text);
+        yield return new WaitForSeconds(_delayBettwenDialogs);
+    }
+
+    private IEnumerator MovementDialog(Pokemon pokemon, Movement movement, bool isPlayer)
+    {
+        _uiCombatController.SetEnableGeneralButtons(false);
+
+        if (isPlayer)
+            yield return _uiCombatController.TypeCombatDialog("Player's " + pokemon.Name + " do " + movement.Name, null);
+        else
+            yield return _uiCombatController.TypeCombatDialog("Opponent's " + pokemon.Name + " do " + movement.Name, null);
+
+        yield return new WaitForSeconds(_delayBettwenDialogs);
+    }
+
+    private IEnumerator WaitToShowMovements()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _uiCombatController.SetEnableGeneralButtons(true);
+    }
+
+    public IEnumerator EndCombat(Pokemon winner = null)
     {
         // Display victory message and end combat
         if (winner != null)
-            Debug.LogError(winner.Name + " wins the battle!");
+            yield return _uiCombatController.TypeCombatDialog(winner.Name + " wins the battle!");
 
+        yield return new WaitForSeconds(_delayBettwenDialogs);
         OnCombatEnd.Invoke();
         gameObject.SetActive(false);
     }
 
-    private void CheckPokemonFainted(bool opponentFainted, PokemonInventory pokemonsInCombat, Pokemon winner)
+    private IEnumerator CheckPokemonFainted(bool opponentFainted, PokemonInventory pokemonsInCombat, Pokemon pokemonFainted, Pokemon winner)
     {
         // Check if the defender has fainted
         if (opponentFainted)
         {
+            yield return ShowDialogWithDelay(pokemonFainted.Name + " is fainted");
+
             Pokemon nextPokemon = pokemonsInCombat.GetFirstReadyPokemon();
             //If is a player, check if he have more pokemons
             if (nextPokemon == null)
             {
                 // If the defender has fainted, end the combat
-                EndCombat(winner);
+                yield return EndCombat(winner);
             }
             else
             {
                 // If the defender has more pokemons change of turn and spawn a new pokemon.
                 if (playerTurn)
-                    SpawnOpponentPokemon(nextPokemon);
+                    SpawnOpponentPokemon(nextPokemon, false);
                 else
                     SpawnPlayerPokemon(nextPokemon);
 
@@ -122,7 +150,6 @@ public class CombatManager : MonoBehaviour
         }
         else
         {
-
             if (playerTurn)
                 // If the defender has not fainted, it becomes the other player's turn
                 StartCoroutine(CoroutineOpponentAction());
@@ -134,11 +161,18 @@ public class CombatManager : MonoBehaviour
 
     public void DoPlayerMovement(CombatAction movement)
     {
+        StartCoroutine(CoroutineDoPlayerMovement(movement));
+    }
+
+    private IEnumerator CoroutineDoPlayerMovement(CombatAction movement)
+    {
+        yield return MovementDialog(_playerUnit.Pokemon, (Movement)movement, true);
+
         bool opponentFainted = movement.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
 
         _opponentUnit.HealthChanged.Invoke(_opponentUnit.Pokemon.CurrentHealth);
 
-        CheckPokemonFainted(opponentFainted, _opponentPokemons, _playerUnit.Pokemon);
+        yield return CheckPokemonFainted(opponentFainted, _opponentPokemons, _opponentUnit.Pokemon, _playerUnit.Pokemon);
     }
 
     public void DoPlayerAbility(CombatAction ability)
@@ -156,12 +190,22 @@ public class CombatManager : MonoBehaviour
 
     public void DoOpponentMovement(CombatAction movement)
     {
-        bool playerFainted = movement.Execute(_opponentUnit.Pokemon, _playerUnit.Pokemon);
+        StartCoroutine(CoroutineDoOpponentMovement(movement));
+    }
+
+    private IEnumerator CoroutineDoOpponentMovement(CombatAction movement)
+    {
+        yield return MovementDialog(_opponentUnit.Pokemon, (Movement)movement, false);
+
+        bool opponentFainted = movement.Execute(_opponentUnit.Pokemon, _playerUnit.Pokemon);
 
         _playerUnit.HealthChanged.Invoke(_playerUnit.Pokemon.CurrentHealth);
 
-        CheckPokemonFainted(playerFainted, _playerPokemons, _opponentUnit.Pokemon);
+        yield return CheckPokemonFainted(opponentFainted, _playerPokemons, _playerUnit.Pokemon, _opponentUnit.Pokemon);
+
+        yield return WaitToShowMovements();
     }
+
 
     public void DoOpponentAbility(CombatAction ability)
     {

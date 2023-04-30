@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Voltotron
   MaxHealth: 80
-  Attack: 70
+  Attack: 80
   Defense: 25
   sprite: {fileID: -1593110182, guid: 7070ee69534624e7c97d2c0bcffa262d, type: 3}
   Movements:

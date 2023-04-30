@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Grizzlor
   MaxHealth: 100
-  Attack: 40
+  Attack: 50
   Defense: 60
   sprite: {fileID: -1443260698, guid: 7070ee69534624e7c97d2c0bcffa262d, type: 3}
   Movements:

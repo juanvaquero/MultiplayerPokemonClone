@@ -21,7 +21,7 @@ public class Movement : CombatAction
     public override bool Execute(Pokemon attacker, Pokemon defender)
     {
         //For simulate the critical movement
-        float modifier = Random.Range(0.8f, 1f);
+        float modifier = Random.Range(0.8f, 1.2f);
         float attackNormalized = attacker.Attack / 255f;
         // Calculate the damage the attacker's move will do to the defender
         float damage = attackNormalized * Power - ((float)attacker.Attack / defender.Defense) + 2;

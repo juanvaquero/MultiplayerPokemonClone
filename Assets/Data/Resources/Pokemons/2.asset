@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Lacorile
   MaxHealth: 75
-  Attack: 60
+  Attack: 70
   Defense: 30
   sprite: {fileID: -1154767716, guid: 7070ee69534624e7c97d2c0bcffa262d, type: 3}
   Movements:

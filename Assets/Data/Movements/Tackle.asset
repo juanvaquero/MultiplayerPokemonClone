@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tackle
   m_EditorClassIdentifier: 
   Name: Tackle
-  Power: 30
+  Power: 60
   Accuracy: 1

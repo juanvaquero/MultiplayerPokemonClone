@@ -3,6 +3,21 @@ using System.Collections.Generic;
 
 public class AbilityFactory
 {
+
+    private static AbilityFactory _factory;
+    public static AbilityFactory Factory
+    {
+        get
+        {
+            if (_factory == null)
+            {
+                _factory = new AbilityFactory();
+            }
+            return _factory;
+        }
+
+    }
+
     private Dictionary<string, IAbilityFactory> _factories;
 
     public AbilityFactory()

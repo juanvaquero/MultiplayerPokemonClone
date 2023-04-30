@@ -5,10 +5,10 @@ public class ModifyOpponentAttack : Ability
     {
     }
 
-    public override void ExecuteAbility(Pokemon playerPokemon, Pokemon otherPokemon)
+    public override bool Execute(Pokemon attacker, Pokemon otherPokemon)
     {
-        base.ExecuteAbility(playerPokemon, otherPokemon);
-
         otherPokemon.Attack += _amountStatAffected;
+
+        return base.Execute(attacker, otherPokemon);
     }
 }

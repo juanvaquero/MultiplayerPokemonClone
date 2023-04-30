@@ -1,37 +1,34 @@
 using UnityEngine;
 
-public class Pokemon : MonoBehaviour
+public class Pokemon
 {
+    private PokemonData _data;
 
-    [SerializeField]
-    private string _name;
-    [SerializeField]
-    private int _maxHealth;
+    public string Name;
+    public int MaxHealth;
 
     public int CurrentHealth;
     public int Attack;
-    public float Defense;
+    public int Defense;
 
     //Collection of movements and Abilities
-    private Movement[] _movements;
-    private Ability[] _abilities;
-    private SpriteRenderer _spriteRenderer;
-    private AbilityFactory _abilityFactory;
-    private void Awake()
+    public Movement[] Movements;
+    public Ability[] Abilities;
+
+
+    public Sprite GetSprite()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _abilityFactory = new AbilityFactory();
+        return _data.sprite;
     }
 
-    public void Initialize(PokemonData pokemonData, bool playerPokemon = true)
+    public Pokemon(PokemonData pokemonData)
     {
-        // _spriteRenderer = GetComponent<SpriteRenderer>();
-        // _abilityFactory = new AbilityFactory();
-        _name = pokemonData.Name;
-        gameObject.name = _name;
+        _data = pokemonData;
 
-        _maxHealth = pokemonData.MaxHealth;
-        CurrentHealth = _maxHealth;
+        Name = pokemonData.Name;
+
+        MaxHealth = pokemonData.MaxHealth;
+        CurrentHealth = MaxHealth;
         Attack = pokemonData.Attack;
         Defense = pokemonData.Defense;
 
@@ -39,12 +36,8 @@ public class Pokemon : MonoBehaviour
         Defense = pokemonData.Defense;
 
         //Build the movements and abilities
-        _movements = CreateMovements(pokemonData.Movements);
-        _abilities = CreateAbilities(pokemonData.Abilities);
-
-        _spriteRenderer.sprite = pokemonData.sprite;
-
-        InvertSpriteDirection(playerPokemon);
+        Movements = CreateMovements(pokemonData.Movements);
+        Abilities = CreateAbilities(pokemonData.Abilities);
     }
 
     private Movement[] CreateMovements(PokemonDataMovement[] pokemonDataMovements)
@@ -65,15 +58,16 @@ public class Pokemon : MonoBehaviour
 
         for (int i = 0; i < pokemonDataAbilities.Length; i++)
         {
-            abilities[i] = _abilityFactory.CreateAbility(pokemonDataAbilities[i]);
+            abilities[i] = AbilityFactory.Factory.CreateAbility(pokemonDataAbilities[i]);
         }
 
         return abilities;
     }
 
-    public void InvertSpriteDirection(bool invert)
+
+    public bool IsPokemonLife()
     {
-        _spriteRenderer.flipX = invert;
+        return CurrentHealth > 0;
     }
 
 }

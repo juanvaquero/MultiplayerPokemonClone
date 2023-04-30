@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3754719761416652420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3754719761416652423}
+  - component: {fileID: 7263297364365225721}
+  m_Layer: 0
+  m_Name: PokemonSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3754719761416652423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754719761416652420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7263297364365225721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754719761416652420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c49a56e53d9c490ab32f4fefd963fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _encounterProbability: 0.3
+  _pokemonList:
+  - {fileID: 11400000, guid: fa6f22ea45e7846ddad82df829bf479a, type: 2}
+  - {fileID: 11400000, guid: 133f5a12450a54aad9989f974e6562b4, type: 2}
+  - {fileID: 11400000, guid: f6f7d098bb81145aeba8a7dce4697d71, type: 2}
+  _battleDelay: 0
+  _spawneableTileMap: {fileID: 0}
+  _spawneableLayerMask:
+    serializedVersion: 2
+    m_Bits: 64

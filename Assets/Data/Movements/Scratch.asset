@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f05c393161074bceb813658958abf32, type: 3}
   m_Name: Scratch
   m_EditorClassIdentifier: 
-  Name: Tackle
-  Power: 12
+  Name: Scratch
+  Power: 50
   Accuracy: 1

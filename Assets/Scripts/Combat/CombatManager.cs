@@ -12,6 +12,9 @@ public class CombatManager : MonoBehaviour
     private float _delayBettwenDialogs = 2f;
 
     [SerializeField]
+    private Camera _combatCamera;
+
+    [SerializeField]
     private CombatUnit _playerUnit; // Instance of the player's unit
     public CombatUnit PlayerUnit
     {
@@ -41,10 +44,14 @@ public class CombatManager : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.SetActive(false);
-
+        SetActiveCombatScene(false);
         MovementExecuted += DoPlayerMovement;
         AbilityExecuted += DoPlayerAbility;
+    }
+
+    public void SetActiveCombatScene(bool enable)
+    {
+        _combatCamera.gameObject.SetActive(enable);
     }
 
     private void SpawnPlayerPokemon(Pokemon pokemon)
@@ -58,21 +65,39 @@ public class CombatManager : MonoBehaviour
         _opponentUnit.LoadCombatUnit(pokemon, false);
     }
 
-    public IEnumerator StartWildEncounter(Pokemon wildPokemon, PokemonInventory pokemonInventory)
+    public IEnumerator StartWildEncounter(Pokemon wildPokemon, PokemonInventory playerInventory)
     {
-        gameObject.SetActive(true);
-
-        _playerPokemons = pokemonInventory;
+        SetActiveCombatScene(true);
+        _playerPokemons = playerInventory;
         _opponentPokemons = new PokemonInventory();
         _opponentPokemons.AddPokemon(wildPokemon);
 
         //Spawn first player pokemon
-        Pokemon playerPokemon = pokemonInventory.GetFirstReadyPokemon();
+        Pokemon playerPokemon = playerInventory.GetFirstReadyPokemon();
 
         SpawnOpponentPokemon(wildPokemon);
         SpawnPlayerPokemon(playerPokemon);
 
         yield return ShowDialogWithDelay("A wild " + wildPokemon.Name + " appeared in the grass.");
+        yield return ShowDialogWithDelay("Player choose " + playerPokemon.Name + ", what shall we do?");
+
+        yield return WaitToShowGeneralButtons();
+    }
+
+    public IEnumerator StartPlayerEncounter(PokemonInventory playerInventory, PokemonInventory opponentInventory)
+    {
+        SetActiveCombatScene(true);
+        _playerPokemons = playerInventory;
+        _opponentPokemons = new PokemonInventory();
+
+        //Spawn first player pokemon
+        Pokemon playerPokemon = playerInventory.GetFirstReadyPokemon();
+        //Spawn first opponent pokemon
+        Pokemon opponentPokemon = opponentInventory.GetFirstReadyPokemon();
+        SpawnOpponentPokemon(opponentPokemon);
+        SpawnPlayerPokemon(playerPokemon);
+
+        yield return ShowDialogWithDelay("Opponent choose " + opponentPokemon.Name + ".");
         yield return ShowDialogWithDelay("Player choose " + playerPokemon.Name + ", what shall we do?");
 
         yield return WaitToShowGeneralButtons();
@@ -90,9 +115,9 @@ public class CombatManager : MonoBehaviour
         _uiCombatController.SetEnableGeneralButtons(false);
 
         if (isPlayer)
-            yield return _uiCombatController.TypeCombatDialog("Player's " + pokemon.Name + " do " + movement.Name + ".", null);
+            yield return _uiCombatController.TypeCombatDialog("Player's " + pokemon.Name + " do " + movement.Name + ".");
         else
-            yield return _uiCombatController.TypeCombatDialog("Opponent's " + pokemon.Name + " do " + movement.Name + ".", null);
+            yield return _uiCombatController.TypeCombatDialog("Opponent's " + pokemon.Name + " do " + movement.Name + ".");
 
         yield return new WaitForSeconds(_delayBettwenDialogs);
     }
@@ -115,7 +140,7 @@ public class CombatManager : MonoBehaviour
 
         yield return new WaitForSeconds(_delayBettwenDialogs);
         OnCombatEnd.Invoke();
-        gameObject.SetActive(false);
+        SetActiveCombatScene(false);
     }
 
     private IEnumerator CheckPokemonFainted(bool opponentFainted, PokemonInventory pokemonsInCombat, Pokemon pokemonFainted, Pokemon winner)

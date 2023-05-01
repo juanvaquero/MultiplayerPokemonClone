@@ -38,4 +38,11 @@ public class GameManager : MonoBehaviour
     }
 
 
+    [SerializeField]
+    private UIController _uiController;
+    public UIController UiController
+    {
+        get { return _uiController; }
+    }
+
 }

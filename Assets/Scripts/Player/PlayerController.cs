@@ -4,6 +4,7 @@ using Photon.Pun;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
+    private const string PLAYER_TRIGER_TAG = "PlayerTrigger";
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
     private const string SPEED = "Speed";
@@ -20,6 +21,9 @@ public class PlayerController : MonoBehaviour
 
     private PhotonView _photonView; // Photon view
 
+    private CombatManager _combatManager;
+    private UIController _uicontroller;
+
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
@@ -28,9 +32,11 @@ public class PlayerController : MonoBehaviour
         _photonView = GetComponent<PhotonView>();
         _moveDirection = Vector2.zero; // Set the initial movement direction to (0, 0)
 
-        CombatManager combatManager = GameManager.Instance.CombatManager;
-        combatManager.OnCombatStart = BlockPlayerMovement;
-        combatManager.OnCombatEnd = UnBlockPlayerMovement;
+        _combatManager = GameManager.Instance.CombatManager;
+        _combatManager.OnCombatStart = BlockPlayerMovement;
+        _combatManager.OnCombatEnd = UnBlockPlayerMovement;
+
+        _uicontroller = GameManager.Instance.UiController;
     }
 
     void Update()
@@ -69,6 +75,19 @@ public class PlayerController : MonoBehaviour
 
             // Move the player based on the current movement direction and speed
             _rigidBody.MovePosition(_rigidBody.position + _moveDirection * _speed * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag(PLAYER_TRIGER_TAG) && !_uicontroller.IsPopupDisplayed() && !_blockMovement)
+        {
+            _blockMovement = true;
+
+            //TODO Get opponent name
+            //Get opponent pokemons
+            PokemonInventory opponentInventory = other.GetComponentInParent<PokemonInventory>();
+            _uicontroller.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory));
         }
     }
 

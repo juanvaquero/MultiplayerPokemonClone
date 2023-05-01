@@ -39,9 +39,9 @@ public class UICombatController : MonoBehaviour
         _movementsPanel.Initialize(playerPokemon.Movements, playerPokemon.Abilities, combatManager);
     }
 
-    public IEnumerator TypeCombatDialog(string text, IEnumerator callback = null)
+    public IEnumerator TypeCombatDialog(string text)
     {
-        yield return _uiCombatDialog.TypeDialog(text, callback);
+        yield return _uiCombatDialog.TypeDialog(text);
     }
 
     public void SetEnableGeneralButtons(bool enable)
@@ -51,7 +51,7 @@ public class UICombatController : MonoBehaviour
 
     private void Fight()
     {
-        _uiCombatDialog.SetEnableCombatDialog(false);
+        _uiCombatDialog.SetEnableDialog(false);
     }
 
     private void Run()

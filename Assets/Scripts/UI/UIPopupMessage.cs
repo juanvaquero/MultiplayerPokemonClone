@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections;
-
+using Photon.Pun;
 public class UIPopupMessage : MonoBehaviour
 {
     [SerializeField]
@@ -19,11 +19,19 @@ public class UIPopupMessage : MonoBehaviour
     private IEnumerator _confirmAction;
     private UnityAction _refuseAction;
 
+    private PhotonView _photonView;
+
     // Start is called before the first frame update
     void Start()
     {
-        _confirmButton.onClick.AddListener(ConfirmPopup);
-        _refuseButton.onClick.AddListener(RefusePopup);
+        _photonView = GetComponent<PhotonView>();
+
+        // _confirmButton.onClick.AddListener(ConfirmPopup);
+        _confirmButton.onClick.AddListener(ConfirmPopupPun);
+
+        // _refuseButton.onClick.AddListener(RefusePopup);
+        _refuseButton.onClick.AddListener(RefusePopupPun);
+
     }
 
     public void ShowPopup(string message, IEnumerator confirmAction, UnityAction refuseAction)
@@ -34,10 +42,15 @@ public class UIPopupMessage : MonoBehaviour
         _confirmAction = confirmAction;
         _refuseAction = refuseAction;
     }
-
+    [PunRPC]
     public void ConfirmPopup()
     {
         StartCoroutine(ConfirmWithDelay());
+    }
+
+    public void ConfirmPopupPun()
+    {
+        _photonView.RPC("ConfirmPopup", RpcTarget.All);
     }
 
     private IEnumerator ConfirmWithDelay()
@@ -48,14 +61,20 @@ public class UIPopupMessage : MonoBehaviour
             yield return _confirmAction;
     }
 
+    [PunRPC]
     public void RefusePopup()
     {
         _popupContent.SetActive(false);
         _refuseAction.Invoke();
     }
 
+    public void RefusePopupPun()
+    {
+        _photonView.RPC("RefusePopup", RpcTarget.All);
+    }
     public bool IsDisplayed()
     {
         return _popupContent.activeSelf;
     }
+
 }

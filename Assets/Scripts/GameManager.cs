@@ -44,5 +44,19 @@ public class GameManager : MonoBehaviour
     {
         get { return _uiController; }
     }
+    private Dictionary<int, PlayerController> _players;
+
+    public Dictionary<int, PlayerController> Players
+    {
+        get
+        {
+            if (_players == null)
+            {
+                _players = new Dictionary<int, PlayerController>();
+            }
+            return _players;
+        }
+    }
+
 
 }

@@ -1,8 +1,12 @@
 using UnityEngine;
 using Photon.Pun;
+using System.Collections.Generic;
+using ExitGames.Client.Photon;
+using Photon.Realtime;
+
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviourPunCallbacks
 {
     private const string PLAYER_TRIGER_TAG = "PlayerTrigger";
     private const string HORIZONTAL = "Horizontal";
@@ -37,6 +41,8 @@ public class PlayerController : MonoBehaviour
         _combatManager.OnCombatEnd = UnBlockPlayerMovement;
 
         _uicontroller = GameManager.Instance.UiController;
+
+        GameManager.Instance.Players.Add(_photonView.ViewID, this);
     }
 
     void Update()
@@ -80,15 +86,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag(PLAYER_TRIGER_TAG) && !_uicontroller.IsPopupDisplayed() && !_blockMovement)
+        if (_photonView.IsMine && other.gameObject.CompareTag(PLAYER_TRIGER_TAG) && !_uicontroller.IsPopupDisplayed() && !_blockMovement)
         {
-            BlockPlayerMovement();
-
-            //TODO Get opponent name
             //Get opponent pokemons
-            PokemonInventory opponentInventory = other.GetComponentInParent<PokemonInventory>();
-            _uicontroller.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
+            PhotonView view = other.GetComponentInParent<PhotonView>();
+            _photonView.RPC("AskToStartBattle", RpcTarget.All, view.ViewID);
+            // _uicontroller.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
         }
+    }
+    [PunRPC]
+    private void AskToStartBattle(int playerId)
+    {
+        PlayerController player;
+        GameManager.Instance.Players.TryGetValue(playerId, out player);
+        PokemonInventory opponentInventory = player.GetPokemonInventory();
+
+        BlockPlayerMovement();
+        //Get opponent pokemons
+        _uicontroller.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
     }
 
     private void CheckPokemonEncounter(bool playerIsMoving)
@@ -117,4 +132,10 @@ public class PlayerController : MonoBehaviour
         //To reset animation player to idle state
         _animator.SetFloat(SPEED, 0f);
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.Players.Remove(_photonView.ViewID);
+    }
+
 }

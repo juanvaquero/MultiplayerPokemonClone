@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System.Collections;
+using Photon.Pun;
 
 public class CombatManager : MonoBehaviour
 {
@@ -34,7 +35,10 @@ public class CombatManager : MonoBehaviour
     [SerializeField]
     private UICombatController _uiCombatController; // Instance of the UI Combat Controller
 
-    private bool playerTurn = true; // Flag to indicate whether it's the player's turn
+    private bool _playerTurn = true; // Flag to indicate whether it's the player's turn
+    private bool _isMultiplayerCombat = false;
+
+    private PhotonView _photonView;
 
     public UnityAction OnCombatStart { get; set; }
     public UnityAction OnCombatEnd { get; set; }
@@ -44,6 +48,7 @@ public class CombatManager : MonoBehaviour
 
     private void Awake()
     {
+        _photonView = GetComponent<PhotonView>();
         SetActiveCombatScene(false);
         MovementExecuted += DoPlayerMovement;
         AbilityExecuted += DoPlayerAbility;
@@ -84,11 +89,16 @@ public class CombatManager : MonoBehaviour
         yield return WaitToShowGeneralButtons();
     }
 
+    [PunRPC]
     public IEnumerator StartPlayerEncounter(PokemonInventory playerInventory, PokemonInventory opponentInventory)
     {
+        //_photonView.RPC("EnemyTakeDamage", RpcTarget.Others, playerObject.GetComponent<PlayerStats>().attackPower);
+
+        _isMultiplayerCombat = true;
+
         SetActiveCombatScene(true);
         _playerPokemons = playerInventory;
-        _opponentPokemons = new PokemonInventory();
+        _opponentPokemons = opponentInventory;
 
         //Spawn first player pokemon
         Pokemon playerPokemon = playerInventory.GetFirstReadyPokemon();
@@ -160,7 +170,7 @@ public class CombatManager : MonoBehaviour
             else
             {
                 // If the opponent has more pokemons change of turn and spawn a new pokemon.
-                if (playerTurn)
+                if (_playerTurn)
                 {
                     SpawnOpponentPokemon(nextPokemon);
                     yield return ShowDialogWithDelay("Opponent choose " + nextPokemon.Name + ".");
@@ -172,20 +182,21 @@ public class CombatManager : MonoBehaviour
                     yield return WaitToShowGeneralButtons();
                 }
 
-                playerTurn = !playerTurn;
+                _playerTurn = !_playerTurn;
             }
         }
         else
         {
-            if (playerTurn)
+            if (_playerTurn)
                 // If the defender has not fainted, it becomes the other player's turn
                 StartCoroutine(CoroutineOpponentAction());
-            playerTurn = !playerTurn;
+            _playerTurn = !_playerTurn;
         }
     }
 
     #region Player movement and abilities
 
+    [PunRPC]
     public void DoPlayerMovement(CombatAction movement)
     {
         StartCoroutine(CoroutineDoPlayerMovement(movement));
@@ -202,19 +213,22 @@ public class CombatManager : MonoBehaviour
         yield return CheckPokemonFainted(opponentFainted, _opponentPokemons, _opponentUnit.Pokemon, _playerUnit.Pokemon);
     }
 
+    [PunRPC]
     public void DoPlayerAbility(CombatAction ability)
     {
-        Debug.LogError("Execute " + ability.Name);
+        // Debug.LogError("Execute " + ability.Name);
         // ability.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
+        _photonView.Invoke("Test", 0f);
 
         //TODO check if the ability is unlocked fot enable the button
-        playerTurn = !playerTurn;
+        _playerTurn = !_playerTurn;
     }
 
     #endregion
 
     #region Opponent movement and abilities
 
+    [PunRPC]
     public void DoOpponentMovement(CombatAction movement)
     {
         StartCoroutine(CoroutineDoOpponentMovement(movement));
@@ -233,22 +247,30 @@ public class CombatManager : MonoBehaviour
         yield return WaitToShowGeneralButtons();
     }
 
-
+    [PunRPC]
     public void DoOpponentAbility(CombatAction ability)
     {
-        Debug.LogError("Execute " + ability.Name);
+        // Debug.LogError("Execute " + ability.Name);
         // ability.Execute(_opponentUnit.Pokemon, _playerUnit.Pokemon);
 
         //TODO check if the ability is unlocked fot enable the button
-        playerTurn = !playerTurn;
+        _playerTurn = !_playerTurn;
     }
 
     private void DoRandomOpponentAction()
     {
-        if (Random.Range(0, 1f) < 1f)
-            DoOpponentMovement(_opponentUnit.Pokemon.Movements[Random.Range(0, _opponentUnit.Pokemon.Movements.Length)]);
+        if (_isMultiplayerCombat)
+        {
+            if (Random.Range(0, 1f) < 1f)
+                DoOpponentMovement(_opponentUnit.Pokemon.Movements[Random.Range(0, _opponentUnit.Pokemon.Movements.Length)]);
+            else
+                DoOpponentAbility(_opponentUnit.Pokemon.Abilities[Random.Range(0, _opponentUnit.Pokemon.Abilities.Length)]);
+        }
         else
-            DoOpponentAbility(_opponentUnit.Pokemon.Abilities[Random.Range(0, _opponentUnit.Pokemon.Abilities.Length)]);
+        {
+
+        }
+
     }
 
     public IEnumerator CoroutineOpponentAction()
@@ -258,5 +280,6 @@ public class CombatManager : MonoBehaviour
     }
 
     #endregion
+
 
 }

@@ -17,6 +17,7 @@ public class UIPopupMessage : MonoBehaviour
     private Button _refuseButton;
 
     private IEnumerator _confirmAction;
+    private UnityAction _refuseAction;
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +26,13 @@ public class UIPopupMessage : MonoBehaviour
         _refuseButton.onClick.AddListener(RefusePopup);
     }
 
-    public void ShowPopup(string message, IEnumerator confirmAction)
+    public void ShowPopup(string message, IEnumerator confirmAction, UnityAction refuseAction)
     {
         _popupContent.SetActive(true);
         StartCoroutine(_uiDialog.TypeDialog(message));
 
         _confirmAction = confirmAction;
+        _refuseAction = refuseAction;
     }
 
     public void ConfirmPopup()
@@ -49,6 +51,7 @@ public class UIPopupMessage : MonoBehaviour
     public void RefusePopup()
     {
         _popupContent.SetActive(false);
+        _refuseAction.Invoke();
     }
 
     public bool IsDisplayed()

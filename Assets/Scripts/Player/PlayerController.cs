@@ -82,12 +82,12 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag(PLAYER_TRIGER_TAG) && !_uicontroller.IsPopupDisplayed() && !_blockMovement)
         {
-            _blockMovement = true;
+            BlockPlayerMovement();
 
             //TODO Get opponent name
             //Get opponent pokemons
             PokemonInventory opponentInventory = other.GetComponentInParent<PokemonInventory>();
-            _uicontroller.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory));
+            _uicontroller.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
         }
     }
 

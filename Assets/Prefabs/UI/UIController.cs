@@ -7,9 +7,9 @@ public class UIController : MonoBehaviour
     [SerializeField]
     UIPopupMessage _popupMessage;
 
-    public void ShowConfirmPopup(string message, IEnumerator confirmAction)
+    public void ShowConfirmPopup(string message, IEnumerator confirmAction, UnityAction refuseAction)
     {
-        _popupMessage.ShowPopup(message, confirmAction);
+        _popupMessage.ShowPopup(message, confirmAction, refuseAction);
     }
 
     public bool IsPopupDisplayed()

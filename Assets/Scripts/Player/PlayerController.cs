@@ -51,11 +51,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
         _uiController = GameManager.Instance.UiController;
 
-
         _playerName = _photonView.Owner.NickName;
         _playerNameText.text = _playerName;
 
         GameManager.Instance.Players.Add(_photonView.ViewID, this);
+
     }
 
     void Update()
@@ -103,23 +103,46 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             if (other.gameObject.CompareTag(PLAYER_TRIGER_TAG) && !_uiController.IsPopupDisplayed() && !_blockMovement)
             {
-                //Get opponent pokemons
-                PhotonView view = other.GetComponentInParent<PhotonView>();
-                _photonView.RPC("AskToStartBattle", RpcTarget.All, view.ViewID);
+                //Get opponent ID
+                PhotonView opponent = other.GetComponentInParent<PhotonView>();
+
+                AskToStartBattleLocal(opponent.ViewID, false);//Show popup with opponent ID in LOCAL
+                _photonView.RPC("AskToStartBattleRemote", RpcTarget.Others, _photonView.ViewID, true);//Send player ID to opponent instance REMOTE
             }
         }
     }
 
-    [PunRPC]
-    private void AskToStartBattle(int playerId)
+    private void AskToStartBattleLocal(int oppponentId, bool callRemote)
     {
-        PlayerController player;
-        GameManager.Instance.Players.TryGetValue(playerId, out player);
-        PokemonInventory opponentInventory = player.GetPokemonInventory();
+        if (_photonView.IsMine)
+        {
+            PlayerController opponent;
+            GameManager.Instance.Players.TryGetValue(oppponentId, out opponent);
+            PokemonInventory opponentInventory = opponent.GetPokemonInventory();
+            _pokemonInventory.ShowPokemonsPlayer();
+            opponentInventory.ShowPokemonsPlayer();
 
-        BlockPlayerMovement();
-        //Get opponent pokemons
-        _uiController.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
+            BlockPlayerMovement();
+            //Get opponent pokemons
+            _uiController.ShowConfirmPopup("Do you want to battle with the " + opponent.PlayerName + " ?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
+        }
+    }
+
+    [PunRPC]
+    private void AskToStartBattleRemote(int oppponentId, bool callRemote)
+    {
+        if (_photonView.IsMine)
+        {
+            PlayerController opponent;
+            GameManager.Instance.Players.TryGetValue(oppponentId, out opponent);
+            PokemonInventory opponentInventory = opponent.GetPokemonInventory();
+            _pokemonInventory.ShowPokemonsPlayer();
+            opponentInventory.ShowPokemonsPlayer();
+
+            BlockPlayerMovement();
+            //Get opponent pokemons
+            _uiController.ShowConfirmPopup("Do you want to battle with the " + opponent.PlayerName + " ?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
+        }
     }
 
     private void CheckPokemonEncounter(bool playerIsMoving)
@@ -139,6 +162,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public void UnBlockPlayerMovement()
     {
+        Debug.LogError("UnBlockPlayerMovement " + PlayerName);
         _blockMovement = false;
     }
 

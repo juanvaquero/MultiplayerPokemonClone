@@ -608,11 +608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f235d2f15354dcc954283f425b6cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInfoPanel: {fileID: 0}
-  _opponentInfoPanel: {fileID: 0}
-  _infoPanel: {fileID: 5462073728879330460}
-  _infoPanelText: {fileID: 3635307081570647427}
+  _uiCombatDialog: {fileID: 0}
   _movementsPanel: {fileID: 2460231325139213638}
+  _generalButtons: {fileID: 0}
   _fightButton: {fileID: 1443876224010841760}
   _runButton: {fileID: 6796022594428074715}
 --- !u!1 &5462073728879330460

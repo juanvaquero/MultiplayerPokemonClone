@@ -28,7 +28,7 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: 
+  DevRegion: eu
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
@@ -39,6 +39,23 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - ConfirmPopup
+  - DoOpponentAbility
+  - DoOpponentMovement
+  - DoPlayerAbility
+  - DoPlayerMovement
+  - EnemyTakeDamage
+  - EnemyTakeItem
+  - PlayerTakeDamage
+  - PlayerTakeItem
+  - RefusePopup
+  - Run
+  - StartPlayerEncounter
+  - AskToStartBattle
+  - ChangeState
+  - UpdateOpponentAction
+  - AskToStartBattle2
+  - AskToStartBattleRemote
   DisableAutoOpenWizard: 1
   ShowSettings: 0
-  DevRegionSetOnce: 0
+  DevRegionSetOnce: 1

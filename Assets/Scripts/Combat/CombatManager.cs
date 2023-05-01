@@ -36,9 +36,6 @@ public class CombatManager : MonoBehaviour
     private UICombatController _uiCombatController; // Instance of the UI Combat Controller
 
     private bool _playerTurn = true; // Flag to indicate whether it's the player's turn
-    private bool _isMultiplayerCombat = false;
-
-    private PhotonView _photonView;
 
     public UnityAction OnCombatStart { get; set; }
     public UnityAction OnCombatEnd { get; set; }
@@ -46,13 +43,58 @@ public class CombatManager : MonoBehaviour
     public UnityAction<CombatAction> MovementExecuted;
     public UnityAction<CombatAction> AbilityExecuted;
 
+    #region Multiplayer variables
+
+    private bool _isMultiplayerCombat = false;
+
+    private PhotonView _photonView;
+
+    [SerializeField]
+    private bool[] _sendPlayersDoAction = { false, false }; // Keeps track of the move chosen by each player
+
+    private int _opponentMultiplayerAction = -1; // -1 nothing, 0 move, 1 ability
+
+    #endregion
+
     private void Awake()
     {
         _photonView = GetComponent<PhotonView>();
         SetActiveCombatScene(false);
         MovementExecuted += DoPlayerMovement;
         AbilityExecuted += DoPlayerAbility;
+
     }
+
+    #region Multiplayer variables
+
+    public void UpdatePlayerAction(bool doAction)
+    {
+        _sendPlayersDoAction[0] = doAction;
+    }
+
+    [PunRPC]
+    public void UpdateOpponentAction(bool doAction, int movementOrAbility)
+    {
+        _sendPlayersDoAction[1] = doAction;
+        Debug.LogError("UpdateOpponentAction -> [" + _sendPlayersDoAction[0] + "," + _sendPlayersDoAction[1] + "]");
+        //For chose the opponent action in the batle;
+        _opponentMultiplayerAction = movementOrAbility;
+    }
+
+    public bool BothPlayersDoAction()
+    {
+        return _sendPlayersDoAction[0] && _sendPlayersDoAction[1];
+    }
+
+    public void ResetPlayersActions()
+    {
+        _sendPlayersDoAction[0] = false;
+        _sendPlayersDoAction[1] = false;
+        _opponentMultiplayerAction = -1;
+    }
+
+    #endregion
+
 
     public void SetActiveCombatScene(bool enable)
     {
@@ -92,7 +134,8 @@ public class CombatManager : MonoBehaviour
     [PunRPC]
     public IEnumerator StartPlayerEncounter(PokemonInventory playerInventory, PokemonInventory opponentInventory)
     {
-        //_photonView.RPC("EnemyTakeDamage", RpcTarget.Others, playerObject.GetComponent<PlayerStats>().attackPower);
+        playerInventory.ShowPokemonsPlayer();
+        opponentInventory.ShowPokemonsPlayer();
 
         _isMultiplayerCombat = true;
 
@@ -196,7 +239,6 @@ public class CombatManager : MonoBehaviour
 
     #region Player movement and abilities
 
-    [PunRPC]
     public void DoPlayerMovement(CombatAction movement)
     {
         StartCoroutine(CoroutineDoPlayerMovement(movement));
@@ -204,6 +246,20 @@ public class CombatManager : MonoBehaviour
 
     private IEnumerator CoroutineDoPlayerMovement(CombatAction movement)
     {
+        Debug.LogError("AAA do movement sin multi");
+        Debug.LogError(_photonView.IsMine + "+" + _isMultiplayerCombat);
+
+        if (_isMultiplayerCombat)
+        {
+            Debug.LogError("AAA do movement multiplayer");
+            UpdatePlayerAction(true);
+            _photonView.RPC("UpdateOpponentAction", RpcTarget.Others, true, 0);
+        }
+
+        yield return ShowDialogWithDelay("Wait for the opponent to make a move.");
+
+        yield return new WaitUntil(() => BothPlayersDoAction());
+
         yield return MovementDialog(_playerUnit.Pokemon, (Movement)movement, true);
 
         bool opponentFainted = movement.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon);
@@ -213,7 +269,6 @@ public class CombatManager : MonoBehaviour
         yield return CheckPokemonFainted(opponentFainted, _opponentPokemons, _opponentUnit.Pokemon, _playerUnit.Pokemon);
     }
 
-    [PunRPC]
     public void DoPlayerAbility(CombatAction ability)
     {
         // Debug.LogError("Execute " + ability.Name);
@@ -228,7 +283,6 @@ public class CombatManager : MonoBehaviour
 
     #region Opponent movement and abilities
 
-    [PunRPC]
     public void DoOpponentMovement(CombatAction movement)
     {
         StartCoroutine(CoroutineDoOpponentMovement(movement));
@@ -245,9 +299,11 @@ public class CombatManager : MonoBehaviour
         yield return CheckPokemonFainted(opponentFainted, _playerPokemons, _playerUnit.Pokemon, _opponentUnit.Pokemon);
 
         yield return WaitToShowGeneralButtons();
+
+        if (_isMultiplayerCombat)
+            ResetPlayersActions();
     }
 
-    [PunRPC]
     public void DoOpponentAbility(CombatAction ability)
     {
         // Debug.LogError("Execute " + ability.Name);
@@ -257,26 +313,26 @@ public class CombatManager : MonoBehaviour
         _playerTurn = !_playerTurn;
     }
 
-    private void DoRandomOpponentAction()
+    private void DoOpponentAction(int doMovement = 0)
     {
-        if (_isMultiplayerCombat)
-        {
-            if (Random.Range(0, 1f) < 1f)
-                DoOpponentMovement(_opponentUnit.Pokemon.Movements[Random.Range(0, _opponentUnit.Pokemon.Movements.Length)]);
-            else
-                DoOpponentAbility(_opponentUnit.Pokemon.Abilities[Random.Range(0, _opponentUnit.Pokemon.Abilities.Length)]);
-        }
+        if (doMovement == 0)
+            DoOpponentMovement(_opponentUnit.Pokemon.Movements[Random.Range(0, _opponentUnit.Pokemon.Movements.Length)]);
         else
-        {
-
-        }
-
+            DoOpponentAbility(_opponentUnit.Pokemon.Abilities[Random.Range(0, _opponentUnit.Pokemon.Abilities.Length)]);
     }
 
     public IEnumerator CoroutineOpponentAction()
     {
         yield return new WaitForSeconds(_delayOfOpponentAction);
-        DoRandomOpponentAction();
+        if (_isMultiplayerCombat)
+        {
+            DoOpponentAction(_opponentMultiplayerAction);
+        }
+        else
+        {
+            // Mathf.RoundToInt(Random.Range(0, 1f));
+            DoOpponentAction(1);
+        }
     }
 
     #endregion

@@ -24,14 +24,17 @@ public class PokemonInventory : MonoBehaviour
     public void GenerateRandomPokemons()
     {
         Random.InitState(GetPlayerSeed());
+        string playerName = GetComponent<PlayerController>().PlayerName;
+
         // Generate a new inventory of Pokémon every time the game is executed
         for (int i = 0; i < MAX_POKEMON; i++)
         {
             // Instantiate the corresponding Pokémon prefab and add it to the list
-            PokemonData pokemonData = Resources.Load<PokemonData>("Pokemons/" + Random.Range(1, MAX_POKEMON).ToString());
+            PokemonData pokemonData = Resources.Load<PokemonData>("Pokemons/" + Random.Range(1, MAX_POKEMON + 1).ToString());
             if (pokemonData != null)
             {
                 Pokemon pokemon = new Pokemon(pokemonData);
+                pokemon.Name += "-" + playerName;
                 _pokemons.Add(pokemon);
             }
         }

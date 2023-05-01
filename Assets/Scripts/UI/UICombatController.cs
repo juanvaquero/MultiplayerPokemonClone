@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
 using System.Collections;
+using Photon.Pun;
 
 public class UICombatController : MonoBehaviour
 {
@@ -10,8 +11,6 @@ public class UICombatController : MonoBehaviour
     [Header("Combat info panel")]
     [SerializeField]
     UIDialogSystem _uiCombatDialog;
-
-
 
     [Header("Pokemon movements panel")]
     [SerializeField]
@@ -26,11 +25,14 @@ public class UICombatController : MonoBehaviour
     private Button _runButton;
 
     private CombatManager _combatManager;
+    private PhotonView _photonView;
+
 
     private void Start()
     {
+        _photonView = GetComponent<PhotonView>();
         _fightButton.onClick.AddListener(Fight);
-        _runButton.onClick.AddListener(Run);
+        _runButton.onClick.AddListener(RunPun);
     }
 
     public void LoadPokemonMovements(Pokemon playerPokemon, CombatManager combatManager)
@@ -53,10 +55,15 @@ public class UICombatController : MonoBehaviour
     {
         _uiCombatDialog.SetEnableDialog(false);
     }
-
+[PunRPC]
     private void Run()
     {
         StartCoroutine(_combatManager.EndCombat());
+    }
+
+    private void RunPun()
+    {
+        _photonView.RPC("Run", RpcTarget.All);
     }
 
     public void SetInteractableRunButton(bool enable)

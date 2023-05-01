@@ -20,14 +20,12 @@ public class Movement : CombatAction
     /// <returns>True: Defender defeated. False: Defender alive.</returns>
     public override bool Execute(Pokemon attacker, Pokemon defender)
     {
-        //For simulate the critical movement
-        float modifier = Random.Range(0.8f, 1.2f);
         float attackNormalized = attacker.Attack / 255f;
         // Calculate the damage the attacker's move will do to the defender
         float damage = attackNormalized * Power - ((float)attacker.Attack / defender.Defense) + 2;
 
         // Apply the damage to the defender's health
-        defender.CurrentHealth -= Mathf.FloorToInt(damage * modifier);
+        defender.CurrentHealth -= Mathf.FloorToInt(damage);
 
         // Check if the defender has fainted
         if (defender.CurrentHealth <= 0)

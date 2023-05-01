@@ -181,13 +181,13 @@ public class CombatManager : MonoBehaviour
         _uiCombatController.SetEnableGeneralButtons(true);
     }
 
-    public IEnumerator EndCombat(Pokemon winner = null)
+    public IEnumerator EndCombat(string winner = "")
     {
         _uiCombatController.SetEnableGeneralButtons(false);
 
         // Display victory message and end combat
-        if (winner != null)
-            yield return _uiCombatController.TypeCombatDialog(winner.Name + " wins the battle!");
+        if (winner != string.Empty)
+            yield return _uiCombatController.TypeCombatDialog(winner + " wins the battle!");
         else
             yield return _uiCombatController.TypeCombatDialog("You escaped from the combat!");
 
@@ -195,6 +195,13 @@ public class CombatManager : MonoBehaviour
         OnCombatEnd.Invoke();
         SetActiveCombatScene(false);
     }
+
+    [PunRPC]
+    public void EndCombatPun(string winner = "")
+    {
+        StartCoroutine(EndCombat(winner));
+    }
+
 
     public IEnumerator WaitToBothPlayerDoAction()
     {
@@ -217,7 +224,11 @@ public class CombatManager : MonoBehaviour
             if (nextPokemon == null)
             {
                 // If the defender has fainted, end the combat
-                yield return EndCombat(winner);
+                if (_isMultiplayerCombat)
+                    yield return EndCombat(winner.Name);
+                else
+                    _photonView.RPC("EndCombatPun", RpcTarget.All, winner.Name);
+
             }
             else
             {

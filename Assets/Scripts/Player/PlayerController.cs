@@ -46,8 +46,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
         _moveDirection = Vector2.zero; // Set the initial movement direction to (0, 0)
 
         _combatManager = GameManager.Instance.CombatManager;
-        _combatManager.OnCombatStart = BlockPlayerMovement;
-        _combatManager.OnCombatEnd = UnBlockPlayerMovement;
+        _combatManager.OnCombatStart += BlockPlayerMovement;
+        _combatManager.OnCombatEnd += UnBlockPlayerMovement;
 
         _uiController = GameManager.Instance.UiController;
 

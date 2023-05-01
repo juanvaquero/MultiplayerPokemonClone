@@ -177,7 +177,7 @@ public class CombatManager : MonoBehaviour
 
     private IEnumerator WaitToShowGeneralButtons()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return null;
         _uiCombatController.SetEnableGeneralButtons(true);
     }
 
@@ -194,6 +194,15 @@ public class CombatManager : MonoBehaviour
         yield return new WaitForSeconds(_delayBettwenDialogs);
         OnCombatEnd.Invoke();
         SetActiveCombatScene(false);
+    }
+
+    public IEnumerator WaitToBothPlayerDoAction()
+    {
+        if (_isMultiplayerCombat)
+        {
+            yield return ShowDialogWithDelay("Wait for the opponent to make a action.");
+            yield return new WaitUntil(() => BothPlayersDoAction());
+        }
     }
 
     private IEnumerator CheckCombatLogic(bool opponentFainted, PokemonInventory pokemonsInCombat, Pokemon pokemonFainted, Pokemon winner)
@@ -217,19 +226,19 @@ public class CombatManager : MonoBehaviour
                 {
                     SpawnOpponentPokemon(nextPokemon);
                     yield return ShowDialogWithDelay("Opponent choose " + nextPokemon.Name + ".");
+
+                    if (_isMultiplayerCombat)
+                        ResetPlayersActions();
                 }
                 else
                 {
                     SpawnPlayerPokemon(nextPokemon);
                     yield return ShowDialogWithDelay("Player choose " + nextPokemon.Name + ",what shall we do?");
+                    // UpdatePlayerAction(true);
+                    _photonView.RPC("UpdateOpponentAction", RpcTarget.Others, true, 0);
                 }
-
-                if (_isMultiplayerCombat)
-                    ResetPlayersActions();
-
-                _playerTurn = !_playerTurn;
-
                 yield return WaitToShowGeneralButtons();
+                _playerTurn = !_playerTurn;
             }
         }
         else
@@ -237,6 +246,9 @@ public class CombatManager : MonoBehaviour
             if (_playerTurn)
                 // If the defender has not fainted, it becomes the other player's turn
                 StartCoroutine(CoroutineOpponentAction());
+            else
+                yield return WaitToShowGeneralButtons();
+
             _playerTurn = !_playerTurn;
         }
     }
@@ -258,10 +270,7 @@ public class CombatManager : MonoBehaviour
             _photonView.RPC("UpdateOpponentAction", RpcTarget.Others, true, 0);
         }
 
-        yield return ShowDialogWithDelay("Wait for the opponent to make a move.");
-
-        if (_isMultiplayerCombat)
-            yield return new WaitUntil(() => BothPlayersDoAction());
+        yield return WaitToBothPlayerDoAction();
 
         yield return MovementDialog(_playerUnit.Pokemon, (Movement)movement, true);
 
@@ -283,24 +292,22 @@ public class CombatManager : MonoBehaviour
         int multiplayerAction;
         if (!ability.Execute(_playerUnit.Pokemon, _opponentUnit.Pokemon))
         {
-            yield return ShowDialogWithDelay(_playerUnit.Pokemon + " execute " + ability.Name + ability.Description);
+            yield return ShowDialogWithDelay(_playerUnit.Pokemon + " execute " + ability.Name + ", this " + ability.Description);
             multiplayerAction = 1;
         }
         else
         {
-            yield return ShowDialogWithDelay("The skill has not been executed, needs " + ability.GetCooldown() + "2 more turns to be used.");
+            yield return ShowDialogWithDelay("The skill has not been executed, needs " + ability.GetCooldown() + " more turns to be used.");
             multiplayerAction = -1;
         }
 
         if (_isMultiplayerCombat)
         {
-            yield return ShowDialogWithDelay("Wait for the opponent to make a move.");
-
             UpdatePlayerAction(true);
             _photonView.RPC("UpdateOpponentAction", RpcTarget.Others, true, multiplayerAction);
-
-            yield return new WaitUntil(() => BothPlayersDoAction());
+            yield return WaitToBothPlayerDoAction();
         }
+
         yield return CheckCombatLogic(false, _opponentPokemons, _opponentUnit.Pokemon, _playerUnit.Pokemon);
     }
 
@@ -339,11 +346,11 @@ public class CombatManager : MonoBehaviour
         Ability ability = (Ability)action;
         if (!ability.Execute(_opponentUnit.Pokemon, _playerUnit.Pokemon))
         {
-            yield return ShowDialogWithDelay(_opponentUnit.Pokemon + " execute " + ability.Name + ability.Description);
+            yield return ShowDialogWithDelay(_opponentUnit.Pokemon + " execute " + ability.Name + ", this " + ability.Description);
         }
         else
         {
-            yield return ShowDialogWithDelay("The skill has not been executed, needs " + ability.GetCooldown() + "2 more turns to be used.");
+            yield return ShowDialogWithDelay("The skill has not been executed, needs " + ability.GetCooldown() + " more turns to be used.");
         }
 
         yield return CheckCombatLogic(false, _playerPokemons, _playerUnit.Pokemon, _opponentUnit.Pokemon);

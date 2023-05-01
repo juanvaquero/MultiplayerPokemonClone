@@ -76,7 +76,6 @@ public class CombatManager : MonoBehaviour
     public void UpdateOpponentAction(bool doAction, int movementOrAbility)
     {
         _sendPlayersDoAction[1] = doAction;
-        Debug.LogError("UpdateOpponentAction -> [" + _sendPlayersDoAction[0] + "," + _sendPlayersDoAction[1] + "]");
         //For chose the opponent action in the batle;
         _opponentMultiplayerAction = movementOrAbility;
     }
@@ -88,7 +87,6 @@ public class CombatManager : MonoBehaviour
 
     public void ResetPlayersActions()
     {
-        Debug.LogError("ResetPlayersActions");
         _sendPlayersDoAction[0] = false;
         _sendPlayersDoAction[1] = false;
         _opponentMultiplayerAction = -1;
@@ -225,9 +223,9 @@ public class CombatManager : MonoBehaviour
             {
                 // If the defender has fainted, end the combat
                 if (_isMultiplayerCombat)
-                    yield return EndCombat(winner.Name);
-                else
                     _photonView.RPC("EndCombatPun", RpcTarget.All, winner.Name);
+                else
+                    yield return EndCombat(winner.Name);
 
             }
             else
@@ -273,8 +271,6 @@ public class CombatManager : MonoBehaviour
 
     private IEnumerator CoroutineDoPlayerMovement(CombatAction movement)
     {
-        Debug.LogError(_photonView.IsMine + "+" + _isMultiplayerCombat);
-
         if (_isMultiplayerCombat)
         {
             UpdatePlayerAction(true);
@@ -309,7 +305,7 @@ public class CombatManager : MonoBehaviour
         else
         {
             yield return ShowDialogWithDelay("The skill has not been executed, needs " + ability.GetCooldown() + " more turns to be used.");
-            multiplayerAction = -1;
+            multiplayerAction = 1;
         }
 
         if (_isMultiplayerCombat)
@@ -401,7 +397,7 @@ public class CombatManager : MonoBehaviour
         else
         {
             // int action = Mathf.RoundToInt(Random.Range(0, 1f));
-            yield return DoOpponentAction(1);
+            yield return DoOpponentAction(0);
         }
     }
 

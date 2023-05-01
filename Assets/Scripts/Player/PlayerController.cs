@@ -119,11 +119,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
             PlayerController opponent;
             GameManager.Instance.Players.TryGetValue(oppponentId, out opponent);
             PokemonInventory opponentInventory = opponent.GetPokemonInventory();
-            _pokemonInventory.ShowPokemonsPlayer();
-            opponentInventory.ShowPokemonsPlayer();
 
             BlockPlayerMovement();
-            //Get opponent pokemons
             _uiController.ShowConfirmPopup("Do you want to battle with the " + opponent.PlayerName + " ?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
         }
     }
@@ -136,11 +133,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
             PlayerController opponent;
             GameManager.Instance.Players.TryGetValue(oppponentId, out opponent);
             PokemonInventory opponentInventory = opponent.GetPokemonInventory();
-            _pokemonInventory.ShowPokemonsPlayer();
-            opponentInventory.ShowPokemonsPlayer();
 
             BlockPlayerMovement();
-            //Get opponent pokemons
             _uiController.ShowConfirmPopup("Do you want to battle with the " + opponent.PlayerName + " ?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
         }
     }
@@ -162,7 +156,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public void UnBlockPlayerMovement()
     {
-        Debug.LogError("UnBlockPlayerMovement " + PlayerName);
         _blockMovement = false;
     }
 

@@ -69,9 +69,9 @@ public class PokemonInventory : MonoBehaviour
 
         for (int i = 0; i < _pokemons.Count; i++)
         {
-            Debug.LogError(playerName + " -> " + i + "º pokemon : " + _pokemons[i].Name + " | " + _pokemons[i].CurrentHealth);
+            Debug.Log(i + "º pokemon : " + _pokemons[i].Name + " | " + _pokemons[i].CurrentHealth);
         }
-        Debug.LogError("------");
+        Debug.Log("------");
     }
 
 }

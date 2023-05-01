@@ -25,6 +25,7 @@ public class PokemonInventory : MonoBehaviour
         {
             // Instantiate the corresponding Pokémon prefab and add it to the list
             PokemonData pokemonData = Resources.Load<PokemonData>("Pokemons/" + Random.Range(1, MAX_POKEMON).ToString());
+            Debug.LogError(i + "º pokemon :" + pokemonData.Name);
             if (pokemonData != null)
             {
                 Pokemon pokemon = new Pokemon(pokemonData);

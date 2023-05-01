@@ -3,6 +3,7 @@ using Photon.Pun;
 using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Realtime;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -15,7 +16,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     [SerializeField]
     private float _speed = 5f; // Player movement speed
+    [SerializeField]
+    private TextMeshPro _playerNameText;
 
+    private string _playerName;
+    public string PlayerName
+    {
+        get { return _playerName; }
+    }
     private bool _blockMovement = false;
     private Vector2 _moveDirection; // Current movement direction of the player
     private Rigidbody2D _rigidBody; // Player's Rigidbody2D component
@@ -26,7 +34,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private PhotonView _photonView; // Photon view
 
     private CombatManager _combatManager;
-    private UIController _uicontroller;
+    private UIController _uiController;
+
 
     void Start()
     {
@@ -40,7 +49,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
         _combatManager.OnCombatStart = BlockPlayerMovement;
         _combatManager.OnCombatEnd = UnBlockPlayerMovement;
 
-        _uicontroller = GameManager.Instance.UiController;
+        _uiController = GameManager.Instance.UiController;
+
+
+        _playerName = _photonView.Owner.NickName;
+        _playerNameText.text = _playerName;
 
         GameManager.Instance.Players.Add(_photonView.ViewID, this);
     }
@@ -86,14 +99,17 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_photonView.IsMine && other.gameObject.CompareTag(PLAYER_TRIGER_TAG) && !_uicontroller.IsPopupDisplayed() && !_blockMovement)
+        if (_photonView.IsMine)
         {
-            //Get opponent pokemons
-            PhotonView view = other.GetComponentInParent<PhotonView>();
-            _photonView.RPC("AskToStartBattle", RpcTarget.All, view.ViewID);
-            // _uicontroller.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
+            if (other.gameObject.CompareTag(PLAYER_TRIGER_TAG) && !_uiController.IsPopupDisplayed() && !_blockMovement)
+            {
+                //Get opponent pokemons
+                PhotonView view = other.GetComponentInParent<PhotonView>();
+                _photonView.RPC("AskToStartBattle", RpcTarget.All, view.ViewID);
+            }
         }
     }
+
     [PunRPC]
     private void AskToStartBattle(int playerId)
     {
@@ -103,7 +119,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
         BlockPlayerMovement();
         //Get opponent pokemons
-        _uicontroller.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
+        _uiController.ShowConfirmPopup("Do you want to battle with the player?", _combatManager.StartPlayerEncounter(_pokemonInventory, opponentInventory), UnBlockPlayerMovement);
     }
 
     private void CheckPokemonEncounter(bool playerIsMoving)

@@ -44,9 +44,9 @@ public class PokemonSpawner : MonoBehaviour
     /// <summary>
     /// The encounter when the player enters the grass
     /// </summary>
-    public void TryEncounterPokemon(Vector3 playerPosition)
+    public void TryEncounterPokemon(Vector3 playerPosition, PokemonInventory pokemonInventory)
     {
-        bool allFainted = GameManager.Instance.PlayerController.GetPokemonInventory().AreAllPokemonFainted();
+        bool allFainted = pokemonInventory.AreAllPokemonFainted();
         if (allFainted)
             Debug.Log("All pokemons are fainted, try to recovery them in the store.");
 
@@ -61,12 +61,12 @@ public class PokemonSpawner : MonoBehaviour
             PokemonData pokemonData = _pokemonList[index];
 
             Pokemon pokemon = new Pokemon(pokemonData);
-            StartCoroutine(StartBattle(pokemon));
+            StartCoroutine(StartBattle(pokemon, pokemonInventory));
         }
     }
 
     // Coroutine to start the battle after a delay
-    private IEnumerator StartBattle(Pokemon pokemon)
+    private IEnumerator StartBattle(Pokemon pokemon, PokemonInventory pokemonInventory)
     {
         CombatManager combatManager = GameManager.Instance.CombatManager;
         combatManager.OnCombatStart.Invoke();
@@ -74,7 +74,7 @@ public class PokemonSpawner : MonoBehaviour
         yield return new WaitForSeconds(_battleDelay);
 
         // Start the battle with the Pokemon
-        yield return combatManager.StartWildEncounter(pokemon);
+        yield return combatManager.StartWildEncounter(pokemon, pokemonInventory);
     }
 
 }

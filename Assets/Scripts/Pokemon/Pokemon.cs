@@ -1,12 +1,12 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 public class Pokemon
 {
     private PokemonData _data;
-
     public string Name;
     public int MaxHealth;
-
     public int CurrentHealth;
     public int Attack;
     public int Defense;

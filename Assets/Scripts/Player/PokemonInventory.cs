@@ -1,4 +1,7 @@
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
+using Photon.Pun;
 using UnityEngine;
 
 public class PokemonInventory : MonoBehaviour
@@ -20,17 +23,23 @@ public class PokemonInventory : MonoBehaviour
 
     public void GenerateRandomPokemons()
     {
+        string playerName = GetComponent<PlayerController>().PlayerName;
+        Random.InitState(GameManager.Instance.GetPlayerSeed(playerName));
+
         // Generate a new inventory of Pokémon every time the game is executed
         for (int i = 0; i < MAX_POKEMON; i++)
         {
             // Instantiate the corresponding Pokémon prefab and add it to the list
-            PokemonData pokemonData = Resources.Load<PokemonData>("Pokemons/" + Random.Range(1, MAX_POKEMON).ToString());
+            PokemonData pokemonData = Resources.Load<PokemonData>("Pokemons/" + Random.Range(1, MAX_POKEMON + 1).ToString());
             if (pokemonData != null)
             {
                 Pokemon pokemon = new Pokemon(pokemonData);
+                pokemon.Name += "-" + playerName;
                 _pokemons.Add(pokemon);
             }
         }
+
+        ShowPokemonsPlayer();
     }
 
     public Pokemon GetFirstReadyPokemon()
@@ -52,6 +61,17 @@ public class PokemonInventory : MonoBehaviour
     {
         if (_pokemons.Count < MAX_POKEMON)
             _pokemons.Add(pokemon);
+    }
+
+    public void ShowPokemonsPlayer()
+    {
+        string playerName = GetComponent<PlayerController>().PlayerName;
+
+        for (int i = 0; i < _pokemons.Count; i++)
+        {
+            Debug.Log(i + "º pokemon : " + _pokemons[i].Name + " | " + _pokemons[i].CurrentHealth);
+        }
+        Debug.Log("------");
     }
 
 }

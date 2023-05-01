@@ -33,4 +33,9 @@ public class Ability : CombatAction
         _currentAbilityCooldown--;
         return true;
     }
+
+    public int GetCooldown()
+    {
+        return _currentAbilityCooldown;
+    }
 }

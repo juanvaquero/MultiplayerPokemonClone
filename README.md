@@ -1,19 +1,19 @@
 # MultiplayerPokemonClone
 
-The repository includes an executables of the demo for both Mac and Windows for those who want to try it. :smile:
+For those who want to give it a try, I include executables for both Windows and Mac here. :smile:
 
-This project is a tech demo of a 2D multiplayer pokemon game,
-in which you can have fights with wild enemies in the grass,
-and challenge other players to a battle if you get close to them.
+• Executables: [Windows](https://drive.google.com/file/d/1A8jwrD3OYHka7ypnvm38ThLNdIEG-box/view?usp=share_link) <-> [Mac](https://drive.google.com/file/d/1UrhgccSkpsYo2jcZEqkREPYYQsNjc1kl/view?usp=share_link)
 
-This demo has been developed in Unity using free licensed assets for the artwork.
-For the multiplayer section the **Photon 2** library has been used.
+This project is a tech demo of a 2D multiplayer Pokemon game, where you can fight wild enemies in the grass,
+and challenge other players to battle when you get close to them.
 
-To be able to play you simply have to start the game, and create a room,
-or join one that has already been created (the rooms have unique names, 
-and therefore the names cannot be repeated, until the room disappears). 
+This demo was developed in Unity, using freely licensed assets for the artwork.
+The Photon 2 library was used for the multiplayer part.
 
-Also, Photon does not allow cross-platform play that I have discovered, so don't try it.
+To play, all you have to do is start the game and create a room or join an existing one 
+(the rooms have unique names, so the names cannot be repeated until the room disappears).
+
+Also, as far as I know, Photon does not allow cross-platform play, so don't try it.
 
 
 # Gameplay Screenshots

@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
         byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(playerName); // Convert the room name into a byte array
         byte[] hashBytes = sha256.ComputeHash(inputBytes); // Compute the hash of the input
         int seed = System.BitConverter.ToInt32(hashBytes, 0); // Convert the first 4 bytes of the hash into a 32-bit integer
-        Debug.LogError(seed + " seed");
         return seed;
     }
 
